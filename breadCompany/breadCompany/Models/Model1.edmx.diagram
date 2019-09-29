@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9e82714a588f4fb5bd174440f1d7f866" Name="Diagram1" ZoomLevel="57">
+        <EntityTypeShape EntityType="GanjaBreadCompanyModel.CountForDays" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GanjaBreadCompanyModel.MarketList" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GanjaBreadCompanyModel.Months" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="GanjaBreadCompanyModel.Price" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GanjaBreadCompanyModel.Subsidiary" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GanjaBreadCompanyModel.Users" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="GanjaBreadCompanyModel.FK_CountForDays_Months" ManuallyRouted="false" />
+        <AssociationConnector Association="GanjaBreadCompanyModel.FK_CountForDays_Subsidiary" ManuallyRouted="false" />
+        <AssociationConnector Association="GanjaBreadCompanyModel.FK_MarketList_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GanjaBreadCompanyModel.FK_Subsidiary_MarketList" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
