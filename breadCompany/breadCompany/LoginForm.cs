@@ -92,5 +92,10 @@ namespace breadCompany
             forgotPass.Show();
             
         }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace breadCompany
 {
     public partial class MarketForm : Form
     {
+        string AZN = " AZN";
         Users activeUser;
         bool isActive;
         int marketId;
@@ -87,7 +89,7 @@ namespace breadCompany
             try
             {
                 var marketList = db.MarketList.Where(w => w.DeletedDate == null && w.UserId == activeUser.Id && w.Users.DeletedDate == null).ToList();
-                if (marketList != null)
+                if (marketList == null)
                 {
                     MessageBox.Show("Zəhmət olmasa market elavə edin!!");
                     return;
@@ -99,6 +101,7 @@ namespace breadCompany
                 monthId = selectedMonth.value;
                 calculatePriceAndCount(marketId, monthId);
                 dgvRefleshDay(marketId, monthId);
+                grbEdit.Visible = false;
             }
             catch (Exception ex)
             {
@@ -112,7 +115,6 @@ namespace breadCompany
             var currentYear = DateTime.Now.Year;
             try
             {
-
                 dgvMarketList.DataSource = db.CountForDays.Where(w => w.Subsidiary.MarketId == Id && w.MonthId == monthId && w.Year == currentYear).Select(s => new
                 {
                     s.Id,
@@ -164,11 +166,14 @@ namespace breadCompany
                 }
                 else if (daysInMonth == 29)
                 {
+                    this.dgvMarketList.Columns["Day29"].Visible = true;
                     this.dgvMarketList.Columns["Day30"].Visible = false;
                     this.dgvMarketList.Columns["Day31"].Visible = false;
                 }
                 else if (daysInMonth == 30)
                 {
+                    this.dgvMarketList.Columns["Day29"].Visible = true;
+                    this.dgvMarketList.Columns["Day30"].Visible = true;
                     this.dgvMarketList.Columns["Day31"].Visible = false;
                 }
 
@@ -221,7 +226,7 @@ namespace breadCompany
             try
             {
                 var marketList = db.MarketList.Where(w => w.DeletedDate == null && w.UserId == activeUser.Id && w.Users.DeletedDate == null).ToList();
-                if (marketList != null)
+                if (marketList == null)
                 {
                     MessageBox.Show("Zəhmət olmasa Market əlavə edin!!");
                     return;
@@ -262,6 +267,7 @@ namespace breadCompany
                 dgvRefleshDay(marketId, monthId);
                 dgvCreateMonth.Visible = false;
                 btnShowNewMonthGrid.Visible = true;
+
             }
             catch (Exception ex)
             {
@@ -275,12 +281,15 @@ namespace breadCompany
         {
             CreateMarket createMarket = new CreateMarket(activeUser);
             createMarket.Show();
+            this.Hide();
         }
 
         private void filialYaratToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateSubsudiary createSub = new CreateSubsudiary(activeUser);
             createSub.Show();
+            this.Hide();
+
 
         }
 
@@ -304,7 +313,7 @@ namespace breadCompany
         {
             dgvCreateMonth.Visible = true;
             btnShowNewMonthGrid.Visible = false;
-
+            grbEdit.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -329,16 +338,35 @@ namespace breadCompany
                 selectedRowId = id;
                 var findRow = db.CountForDays.Find(id);
 
-                CUD1.Value = Convert.ToInt32(findRow.Day1); CUD2.Value = Convert.ToInt32(findRow.Day2); CUD3.Value = Convert.ToInt32(findRow.Day3);
-                CUD4.Value = Convert.ToInt32(findRow.Day4); CUD5.Value = Convert.ToInt32(findRow.Day5); CUD6.Value = Convert.ToInt32(findRow.Day6);
-                CUD7.Value = Convert.ToInt32(findRow.Day7); CUD8.Value = Convert.ToInt32(findRow.Day8);
-                CUD9.Value = Convert.ToInt32(findRow.Day9); CUD10.Value = Convert.ToInt32(findRow.Day10); CUD11.Value = Convert.ToInt32(findRow.Day11);
-                CUD12.Value = Convert.ToInt32(findRow.Day12); CUD13.Value = Convert.ToInt32(findRow.Day13); CUD14.Value = Convert.ToInt32(findRow.Day14);
-                CUD15.Value = Convert.ToInt32(findRow.Day15); CUD16.Value = Convert.ToInt32(findRow.Day16); CUD17.Value = Convert.ToInt32(findRow.Day17);
-                CUD18.Value = Convert.ToInt32(findRow.Day18); CUD19.Value = Convert.ToInt32(findRow.Day19); CUD20.Value = Convert.ToInt32(findRow.Day20);
-                CUD21.Value = Convert.ToInt32(findRow.Day21); CUD22.Value = Convert.ToInt32(findRow.Day22); CUD23.Value = Convert.ToInt32(findRow.Day23);
-                CUD24.Value = Convert.ToInt32(findRow.Day24); CUD25.Value = Convert.ToInt32(findRow.Day25); CUD26.Value = Convert.ToInt32(findRow.Day26);
-                CUD27.Value = Convert.ToInt32(findRow.Day27); CUD28.Value = Convert.ToInt32(findRow.Day28); txtPrice.Text = findRow.PriceOfOne.ToString();
+                CUD1.Value = Convert.ToInt32(findRow.Day1); lblPriceDay1.Text = (findRow.Day1*findRow.PriceOfOne).ToString() + AZN;
+                CUD2.Value = Convert.ToInt32(findRow.Day2); lblPriceDay2.Text = (findRow.Day2 * findRow.PriceOfOne).ToString() + AZN;
+                CUD3.Value = Convert.ToInt32(findRow.Day3); lblPriceDay3.Text = (findRow.Day3 * findRow.PriceOfOne).ToString() + AZN;
+                CUD4.Value = Convert.ToInt32(findRow.Day4); lblPriceDay4.Text = (findRow.Day4 * findRow.PriceOfOne).ToString() + AZN;
+                CUD5.Value = Convert.ToInt32(findRow.Day5); lblPriceDay5.Text = (findRow.Day5 * findRow.PriceOfOne).ToString() + AZN;
+                CUD6.Value = Convert.ToInt32(findRow.Day6); lblPriceDay6.Text = (findRow.Day6 * findRow.PriceOfOne).ToString() + AZN;
+                CUD7.Value = Convert.ToInt32(findRow.Day7); lblPriceDay7.Text = (findRow.Day7 * findRow.PriceOfOne).ToString() + AZN;
+                CUD8.Value = Convert.ToInt32(findRow.Day8); lblPriceDay8.Text = (findRow.Day8 * findRow.PriceOfOne).ToString() + AZN;
+                CUD9.Value = Convert.ToInt32(findRow.Day9); lblPriceDay9.Text = (findRow.Day9 * findRow.PriceOfOne).ToString() + AZN;
+                CUD10.Value = Convert.ToInt32(findRow.Day10); lblPriceDay10.Text = (findRow.Day10 * findRow.PriceOfOne).ToString() + AZN;
+                CUD11.Value = Convert.ToInt32(findRow.Day11); lblPriceDay11.Text = (findRow.Day11 * findRow.PriceOfOne).ToString() + AZN;
+                CUD12.Value = Convert.ToInt32(findRow.Day12); lblPriceDay12.Text = (findRow.Day12 * findRow.PriceOfOne).ToString() + AZN;
+                CUD13.Value = Convert.ToInt32(findRow.Day13); lblPriceDay13.Text = (findRow.Day13 * findRow.PriceOfOne).ToString() + AZN;
+                CUD14.Value = Convert.ToInt32(findRow.Day14); lblPriceDay14.Text = (findRow.Day14 * findRow.PriceOfOne).ToString() + AZN;
+                CUD15.Value = Convert.ToInt32(findRow.Day15); lblPriceDay15.Text = (findRow.Day15 * findRow.PriceOfOne).ToString() + AZN;
+                CUD16.Value = Convert.ToInt32(findRow.Day16); lblPriceDay16.Text = (findRow.Day16 * findRow.PriceOfOne).ToString() + AZN;
+                CUD17.Value = Convert.ToInt32(findRow.Day17); lblPriceDay17.Text = (findRow.Day17 * findRow.PriceOfOne).ToString() + AZN;
+                CUD18.Value = Convert.ToInt32(findRow.Day18); lblPriceDay18.Text = (findRow.Day18 * findRow.PriceOfOne).ToString() + AZN;
+                CUD19.Value = Convert.ToInt32(findRow.Day19); lblPriceDay19.Text = (findRow.Day19 * findRow.PriceOfOne).ToString() + AZN;
+                CUD20.Value = Convert.ToInt32(findRow.Day20); lblPriceDay20.Text = (findRow.Day20 * findRow.PriceOfOne).ToString() + AZN;
+                CUD21.Value = Convert.ToInt32(findRow.Day21); lblPriceDay21.Text = (findRow.Day21 * findRow.PriceOfOne).ToString() + AZN;
+                CUD22.Value = Convert.ToInt32(findRow.Day22); lblPriceDay22.Text = (findRow.Day22* findRow.PriceOfOne).ToString() + AZN;
+                CUD23.Value = Convert.ToInt32(findRow.Day23); lblPriceDay23.Text = (findRow.Day23 * findRow.PriceOfOne).ToString() + AZN;
+                CUD24.Value = Convert.ToInt32(findRow.Day24); lblPriceDay24.Text = (findRow.Day24 * findRow.PriceOfOne).ToString() + AZN;
+                CUD25.Value = Convert.ToInt32(findRow.Day25); lblPriceDay25.Text = (findRow.Day25 * findRow.PriceOfOne).ToString() + AZN;
+                CUD26.Value = Convert.ToInt32(findRow.Day26); lblPriceDay26.Text = (findRow.Day26 * findRow.PriceOfOne).ToString() + AZN;
+                CUD27.Value = Convert.ToInt32(findRow.Day27); lblPriceDay27.Text = (findRow.Day27 * findRow.PriceOfOne).ToString() + AZN;
+                CUD28.Value = Convert.ToInt32(findRow.Day28); lblPriceDay28.Text = (findRow.Day28 * findRow.PriceOfOne).ToString() + AZN;
+                txtPrice.Text = findRow.PriceOfOne.ToString();
                 if (DateTime.DaysInMonth(DateTime.Now.Year, monthId) == 28)
                 {
                     CUD29.Visible = false;
@@ -351,29 +379,48 @@ namespace breadCompany
                 else if (DateTime.DaysInMonth(DateTime.Now.Year, monthId) == 29)
                 {
                     CUD29.Value = Convert.ToInt32(findRow.Day29);
+                    lblPriceDay29.Text = (findRow.Day29 * findRow.PriceOfOne).ToString() + AZN;
+                    CUD29.Visible = true;
                     CUD30.Visible = false;
                     CUD31.Visible = false;
+                    label32.Visible = true;
                     label33.Visible = false;
                     label34.Visible = false;
+                    lblPriceDay30.Visible = false;
+                    lblPriceDay31.Visible = false;
+
                 }
                 else if (DateTime.DaysInMonth(DateTime.Now.Year, monthId) == 30)
                 {
                     CUD29.Value = Convert.ToInt32(findRow.Day29);
+                    lblPriceDay29.Text = (findRow.Day29 * findRow.PriceOfOne).ToString() + AZN;
                     CUD30.Value = Convert.ToInt32(findRow.Day30);
+                    lblPriceDay30.Text = (findRow.Day30 * findRow.PriceOfOne).ToString() + AZN;
+                    CUD29.Visible = true;
+                    CUD30.Visible = true;
                     CUD31.Visible = false;
+                    label32.Visible = true;
+                    label33.Visible = true;
                     label34.Visible = false;
+                    lblPriceDay31.Visible = false;
                 }
                 else if (DateTime.DaysInMonth(DateTime.Now.Year, monthId) == 31)
                 {
                     CUD29.Value = Convert.ToInt32(findRow.Day29);
+                    lblPriceDay29.Text = (findRow.Day29 * findRow.PriceOfOne).ToString() +AZN;
                     CUD30.Value = Convert.ToInt32(findRow.Day30);
+                    lblPriceDay30.Text = (findRow.Day30 * findRow.PriceOfOne).ToString() + AZN;
                     CUD31.Value = Convert.ToInt32(findRow.Day31);
+                    lblPriceDay31.Text = (findRow.Day31 * findRow.PriceOfOne).ToString() + AZN;
                     CUD29.Visible = true;
                     CUD30.Visible = true;
                     CUD31.Visible = true;
                     label32.Visible = true;
                     label33.Visible = true;
                     label34.Visible = true;
+                    lblPriceDay29.Visible = true;
+                    lblPriceDay30.Visible = true;
+                    lblPriceDay31.Visible = true;
                 }
                 lblTotalAmount.Text = 0.ToString() + "  AZN";
 
@@ -402,6 +449,37 @@ namespace breadCompany
                 findRow.Day25 = (int)CUD25.Value; findRow.Day26 = (int)CUD26.Value; findRow.Day27 = (int)CUD27.Value;
                 findRow.Day28 = (int)CUD28.Value; findRow.Day29 = (int)CUD29.Value; findRow.Day30 = (int)CUD30.Value;
                 findRow.Day31 = (int)CUD31.Value; findRow.PriceOfOne = Convert.ToDouble(txtPrice.Text);
+                lblPriceDay1.Text = (findRow.Day1 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay2.Text = (findRow.Day2 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay3.Text = (findRow.Day3* findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay4.Text = (findRow.Day4 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay5.Text = (findRow.Day5 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay6.Text = (findRow.Day6 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay7.Text = (findRow.Day7 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay8.Text = (findRow.Day8 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay9.Text = (findRow.Day9 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay10.Text = (findRow.Day10 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay11.Text = (findRow.Day11 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay12.Text = (findRow.Day12 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay13.Text = (findRow.Day13 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay14.Text = (findRow.Day14 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay15.Text = (findRow.Day15 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay16.Text = (findRow.Day16 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay17.Text = (findRow.Day17 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay18.Text = (findRow.Day18 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay19.Text = (findRow.Day19 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay20.Text = (findRow.Day20 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay21.Text = (findRow.Day21 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay22.Text = (findRow.Day22 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay23.Text = (findRow.Day23 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay24.Text = (findRow.Day24 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay25.Text = (findRow.Day25* findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay26.Text = (findRow.Day26 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay27.Text = (findRow.Day27 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay28.Text = (findRow.Day28 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay29.Text = (findRow.Day29 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay30.Text = (findRow.Day30 * findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay31.Text = (findRow.Day31 * findRow.PriceOfOne).ToString() + AZN;
                 db.Entry(findRow).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 calculatePriceAndCount(marketId, monthId);
@@ -438,6 +516,32 @@ namespace breadCompany
         private void MarketForm_Click(object sender, EventArgs e)
         {
             lblTotalAmount.Text = "AZN";
+        }
+
+        private void MarketForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            LoginForm logForm = new LoginForm();
+            logForm.Show();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            printDocument1.Print();
+        }
+        private void CaptureScreen()
+        {
+            Graphics myGraphics = this.CreateGraphics();
+            Size s = this.Size;
+            Bitmap memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
+        }
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(this.dgvMarketList.Width, this.dgvMarketList.Height);
+            dgvMarketList.DrawToBitmap(bm, new Rectangle(0,0, this.dgvMarketList.Width, this.dgvMarketList.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+            CaptureScreen();
         }
     }
 }

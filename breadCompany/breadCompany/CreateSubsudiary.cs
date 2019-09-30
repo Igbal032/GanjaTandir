@@ -177,5 +177,11 @@ namespace breadCompany
             btnEdit.Visible = false;
             txtFlialNAme.Text = "";
         }
+
+        private void CreateSubsudiary_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MarketForm marketForm = new MarketForm(activeUser);
+            marketForm.Show();
+        }
     }
 }

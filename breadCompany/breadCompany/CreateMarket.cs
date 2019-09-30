@@ -46,11 +46,6 @@ namespace breadCompany
                     MessageBox.Show("Bu adda market mövcuddur!!");
                     return;
                 }
-                else
-                {
-
-                }
-
                 var marketName = txtMarketName.Text.ToUpper();
                 MarketList newMarket = new MarketList();
                 newMarket.MarketName = marketName;
@@ -168,6 +163,12 @@ namespace breadCompany
             txtMarketName.Text = "";
             btnEdit.Visible = false;
             btnDelete.Visible = false;
+        }
+
+        private void CreateMarket_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MarketForm marketForm = new MarketForm(activeUser);
+            marketForm.Show();
         }
     }
 }

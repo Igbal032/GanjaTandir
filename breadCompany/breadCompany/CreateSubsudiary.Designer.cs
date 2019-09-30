@@ -157,6 +157,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filial Yarat";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateSubsudiary_FormClosing);
             this.Load += new System.EventHandler(this.CreateSubsudiary_Load);
             this.Click += new System.EventHandler(this.CreateSubsudiary_Click);
             this.grbCreateFilial.ResumeLayout(false);

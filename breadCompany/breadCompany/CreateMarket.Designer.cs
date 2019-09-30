@@ -73,7 +73,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(257, 16);
+            this.btnEdit.Location = new System.Drawing.Point(256, 24);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 5;
@@ -144,6 +144,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Market Yarat";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateMarket_FormClosing);
             this.Load += new System.EventHandler(this.CreateMarket_Load);
             this.Click += new System.EventHandler(this.CreateMarket_Click);
             this.groupBox1.ResumeLayout(false);
