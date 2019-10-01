@@ -881,281 +881,281 @@
             // lblPriceDay16
             // 
             this.lblPriceDay16.AutoSize = true;
-            this.lblPriceDay16.Location = new System.Drawing.Point(66, 93);
+            this.lblPriceDay16.Location = new System.Drawing.Point(55, 93);
             this.lblPriceDay16.Name = "lblPriceDay16";
-            this.lblPriceDay16.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay16.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay16.TabIndex = 98;
-            this.lblPriceDay16.Text = "0";
+            this.lblPriceDay16.Text = "125AZN";
             // 
             // lblPriceDay1
             // 
             this.lblPriceDay1.AutoSize = true;
-            this.lblPriceDay1.Location = new System.Drawing.Point(102, 44);
+            this.lblPriceDay1.Location = new System.Drawing.Point(91, 44);
             this.lblPriceDay1.Name = "lblPriceDay1";
-            this.lblPriceDay1.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay1.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay1.TabIndex = 97;
-            this.lblPriceDay1.Text = "0";
+            this.lblPriceDay1.Text = "125AZN";
             // 
             // lblPriceDay17
             // 
             this.lblPriceDay17.AutoSize = true;
-            this.lblPriceDay17.Location = new System.Drawing.Point(166, 94);
+            this.lblPriceDay17.Location = new System.Drawing.Point(158, 94);
             this.lblPriceDay17.Name = "lblPriceDay17";
-            this.lblPriceDay17.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay17.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay17.TabIndex = 96;
-            this.lblPriceDay17.Text = "0";
+            this.lblPriceDay17.Text = "125AZN";
             // 
             // lblPriceDay2
             // 
             this.lblPriceDay2.AutoSize = true;
-            this.lblPriceDay2.Location = new System.Drawing.Point(204, 44);
+            this.lblPriceDay2.Location = new System.Drawing.Point(194, 44);
             this.lblPriceDay2.Name = "lblPriceDay2";
-            this.lblPriceDay2.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay2.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay2.TabIndex = 96;
-            this.lblPriceDay2.Text = "0";
+            this.lblPriceDay2.Text = "125AZN";
             // 
             // lblPriceDay29
             // 
             this.lblPriceDay29.AutoSize = true;
-            this.lblPriceDay29.Location = new System.Drawing.Point(1403, 93);
+            this.lblPriceDay29.Location = new System.Drawing.Point(1390, 93);
             this.lblPriceDay29.Name = "lblPriceDay29";
-            this.lblPriceDay29.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay29.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay29.TabIndex = 95;
-            this.lblPriceDay29.Text = "0";
+            this.lblPriceDay29.Text = "125AZN";
             // 
             // lblPriceDay28
             // 
             this.lblPriceDay28.AutoSize = true;
-            this.lblPriceDay28.Location = new System.Drawing.Point(1298, 94);
+            this.lblPriceDay28.Location = new System.Drawing.Point(1291, 94);
             this.lblPriceDay28.Name = "lblPriceDay28";
-            this.lblPriceDay28.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay28.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay28.TabIndex = 95;
-            this.lblPriceDay28.Text = "0";
+            this.lblPriceDay28.Text = "125AZN";
             // 
             // lblPriceDay27
             // 
             this.lblPriceDay27.AutoSize = true;
-            this.lblPriceDay27.Location = new System.Drawing.Point(1200, 94);
+            this.lblPriceDay27.Location = new System.Drawing.Point(1192, 94);
             this.lblPriceDay27.Name = "lblPriceDay27";
-            this.lblPriceDay27.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay27.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay27.TabIndex = 95;
-            this.lblPriceDay27.Text = "0";
+            this.lblPriceDay27.Text = "125AZN";
             // 
             // lblPriceDay26
             // 
             this.lblPriceDay26.AutoSize = true;
-            this.lblPriceDay26.Location = new System.Drawing.Point(1100, 94);
+            this.lblPriceDay26.Location = new System.Drawing.Point(1088, 94);
             this.lblPriceDay26.Name = "lblPriceDay26";
-            this.lblPriceDay26.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay26.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay26.TabIndex = 95;
-            this.lblPriceDay26.Text = "0";
+            this.lblPriceDay26.Text = "125AZN";
             // 
             // lblPriceDay25
             // 
             this.lblPriceDay25.AutoSize = true;
             this.lblPriceDay25.Location = new System.Drawing.Point(996, 94);
             this.lblPriceDay25.Name = "lblPriceDay25";
-            this.lblPriceDay25.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay25.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay25.TabIndex = 95;
-            this.lblPriceDay25.Text = "0";
+            this.lblPriceDay25.Text = "125AZN";
             // 
             // lblPriceDay24
             // 
             this.lblPriceDay24.AutoSize = true;
-            this.lblPriceDay24.Location = new System.Drawing.Point(899, 93);
+            this.lblPriceDay24.Location = new System.Drawing.Point(886, 93);
             this.lblPriceDay24.Name = "lblPriceDay24";
-            this.lblPriceDay24.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay24.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay24.TabIndex = 95;
-            this.lblPriceDay24.Text = "0";
+            this.lblPriceDay24.Text = "125AZN";
             // 
             // lblPriceDay23
             // 
             this.lblPriceDay23.AutoSize = true;
-            this.lblPriceDay23.Location = new System.Drawing.Point(794, 94);
+            this.lblPriceDay23.Location = new System.Drawing.Point(786, 94);
             this.lblPriceDay23.Name = "lblPriceDay23";
-            this.lblPriceDay23.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay23.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay23.TabIndex = 95;
-            this.lblPriceDay23.Text = "0";
+            this.lblPriceDay23.Text = "125AZN";
             // 
             // lblPriceDay22
             // 
             this.lblPriceDay22.AutoSize = true;
-            this.lblPriceDay22.Location = new System.Drawing.Point(694, 94);
+            this.lblPriceDay22.Location = new System.Drawing.Point(685, 94);
             this.lblPriceDay22.Name = "lblPriceDay22";
-            this.lblPriceDay22.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay22.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay22.TabIndex = 95;
-            this.lblPriceDay22.Text = "0";
+            this.lblPriceDay22.Text = "125AZN";
             // 
             // lblPriceDay21
             // 
             this.lblPriceDay21.AutoSize = true;
-            this.lblPriceDay21.Location = new System.Drawing.Point(584, 94);
+            this.lblPriceDay21.Location = new System.Drawing.Point(566, 94);
             this.lblPriceDay21.Name = "lblPriceDay21";
-            this.lblPriceDay21.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay21.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay21.TabIndex = 95;
-            this.lblPriceDay21.Text = "0";
+            this.lblPriceDay21.Text = "125AZN";
             // 
             // lblPriceDay20
             // 
             this.lblPriceDay20.AutoSize = true;
-            this.lblPriceDay20.Location = new System.Drawing.Point(476, 94);
+            this.lblPriceDay20.Location = new System.Drawing.Point(463, 93);
             this.lblPriceDay20.Name = "lblPriceDay20";
-            this.lblPriceDay20.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay20.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay20.TabIndex = 95;
-            this.lblPriceDay20.Text = "0";
+            this.lblPriceDay20.Text = "125AZN";
             // 
             // lblPriceDay19
             // 
             this.lblPriceDay19.AutoSize = true;
-            this.lblPriceDay19.Location = new System.Drawing.Point(371, 94);
+            this.lblPriceDay19.Location = new System.Drawing.Point(356, 94);
             this.lblPriceDay19.Name = "lblPriceDay19";
-            this.lblPriceDay19.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay19.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay19.TabIndex = 95;
-            this.lblPriceDay19.Text = "0";
+            this.lblPriceDay19.Text = "125AZN";
             // 
             // lblPriceDay18
             // 
             this.lblPriceDay18.AutoSize = true;
-            this.lblPriceDay18.Location = new System.Drawing.Point(268, 94);
+            this.lblPriceDay18.Location = new System.Drawing.Point(258, 94);
             this.lblPriceDay18.Name = "lblPriceDay18";
-            this.lblPriceDay18.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay18.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay18.TabIndex = 95;
-            this.lblPriceDay18.Text = "0";
+            this.lblPriceDay18.Text = "125AZN";
             // 
             // lblPriceDay3
             // 
             this.lblPriceDay3.AutoSize = true;
-            this.lblPriceDay3.Location = new System.Drawing.Point(307, 44);
+            this.lblPriceDay3.Location = new System.Drawing.Point(296, 44);
             this.lblPriceDay3.Name = "lblPriceDay3";
-            this.lblPriceDay3.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay3.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay3.TabIndex = 95;
-            this.lblPriceDay3.Text = "0";
+            this.lblPriceDay3.Text = "125AZN";
             // 
             // lblPriceDay4
             // 
             this.lblPriceDay4.AutoSize = true;
-            this.lblPriceDay4.Location = new System.Drawing.Point(412, 44);
+            this.lblPriceDay4.Location = new System.Drawing.Point(399, 44);
             this.lblPriceDay4.Name = "lblPriceDay4";
-            this.lblPriceDay4.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay4.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay4.TabIndex = 94;
-            this.lblPriceDay4.Text = "0";
+            this.lblPriceDay4.Text = "125AZN";
             // 
             // lblPriceDay5
             // 
             this.lblPriceDay5.AutoSize = true;
-            this.lblPriceDay5.Location = new System.Drawing.Point(511, 44);
+            this.lblPriceDay5.Location = new System.Drawing.Point(503, 44);
             this.lblPriceDay5.Name = "lblPriceDay5";
-            this.lblPriceDay5.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay5.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay5.TabIndex = 93;
-            this.lblPriceDay5.Text = "0";
+            this.lblPriceDay5.Text = "125AZN";
             // 
             // lblPriceDay6
             // 
             this.lblPriceDay6.AutoSize = true;
-            this.lblPriceDay6.Location = new System.Drawing.Point(618, 44);
+            this.lblPriceDay6.Location = new System.Drawing.Point(609, 44);
             this.lblPriceDay6.Name = "lblPriceDay6";
-            this.lblPriceDay6.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay6.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay6.TabIndex = 92;
-            this.lblPriceDay6.Text = "0";
+            this.lblPriceDay6.Text = "125AZN";
             // 
             // lblPriceDay7
             // 
             this.lblPriceDay7.AutoSize = true;
-            this.lblPriceDay7.Location = new System.Drawing.Point(718, 44);
+            this.lblPriceDay7.Location = new System.Drawing.Point(710, 44);
             this.lblPriceDay7.Name = "lblPriceDay7";
-            this.lblPriceDay7.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay7.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay7.TabIndex = 91;
-            this.lblPriceDay7.Text = "0";
+            this.lblPriceDay7.Text = "125AZN";
             // 
             // lblPriceDay8
             // 
             this.lblPriceDay8.AutoSize = true;
-            this.lblPriceDay8.Location = new System.Drawing.Point(823, 44);
+            this.lblPriceDay8.Location = new System.Drawing.Point(810, 44);
             this.lblPriceDay8.Name = "lblPriceDay8";
-            this.lblPriceDay8.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay8.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay8.TabIndex = 90;
-            this.lblPriceDay8.Text = "0";
+            this.lblPriceDay8.Text = "125AZN";
             // 
             // lblPriceDay9
             // 
             this.lblPriceDay9.AutoSize = true;
-            this.lblPriceDay9.Location = new System.Drawing.Point(920, 44);
+            this.lblPriceDay9.Location = new System.Drawing.Point(913, 44);
             this.lblPriceDay9.Name = "lblPriceDay9";
-            this.lblPriceDay9.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay9.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay9.TabIndex = 89;
-            this.lblPriceDay9.Text = "0";
+            this.lblPriceDay9.Text = "125AZN";
             // 
             // lblPriceDay10
             // 
             this.lblPriceDay10.AutoSize = true;
-            this.lblPriceDay10.Location = new System.Drawing.Point(1018, 44);
+            this.lblPriceDay10.Location = new System.Drawing.Point(1012, 44);
             this.lblPriceDay10.Name = "lblPriceDay10";
-            this.lblPriceDay10.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay10.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay10.TabIndex = 88;
-            this.lblPriceDay10.Text = "0";
+            this.lblPriceDay10.Text = "125AZN";
             // 
             // lblPriceDay11
             // 
             this.lblPriceDay11.AutoSize = true;
-            this.lblPriceDay11.Location = new System.Drawing.Point(1124, 44);
+            this.lblPriceDay11.Location = new System.Drawing.Point(1116, 44);
             this.lblPriceDay11.Name = "lblPriceDay11";
-            this.lblPriceDay11.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay11.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay11.TabIndex = 87;
-            this.lblPriceDay11.Text = "0";
+            this.lblPriceDay11.Text = "125AZN";
             // 
             // lblPriceDay12
             // 
             this.lblPriceDay12.AutoSize = true;
-            this.lblPriceDay12.Location = new System.Drawing.Point(1222, 44);
+            this.lblPriceDay12.Location = new System.Drawing.Point(1216, 44);
             this.lblPriceDay12.Name = "lblPriceDay12";
-            this.lblPriceDay12.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay12.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay12.TabIndex = 86;
-            this.lblPriceDay12.Text = "0";
+            this.lblPriceDay12.Text = "125AZN";
             // 
             // lblPriceDay13
             // 
             this.lblPriceDay13.AutoSize = true;
-            this.lblPriceDay13.Location = new System.Drawing.Point(1320, 44);
+            this.lblPriceDay13.Location = new System.Drawing.Point(1321, 44);
             this.lblPriceDay13.Name = "lblPriceDay13";
-            this.lblPriceDay13.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay13.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay13.TabIndex = 85;
-            this.lblPriceDay13.Text = "0";
+            this.lblPriceDay13.Text = "125AZN";
             // 
             // lblPriceDay14
             // 
             this.lblPriceDay14.AutoSize = true;
-            this.lblPriceDay14.Location = new System.Drawing.Point(1418, 44);
+            this.lblPriceDay14.Location = new System.Drawing.Point(1426, 44);
             this.lblPriceDay14.Name = "lblPriceDay14";
-            this.lblPriceDay14.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay14.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay14.TabIndex = 84;
-            this.lblPriceDay14.Text = "0";
+            this.lblPriceDay14.Text = "125AZN";
             // 
             // lblPriceDay31
             // 
             this.lblPriceDay31.AutoSize = true;
-            this.lblPriceDay31.Location = new System.Drawing.Point(1608, 94);
+            this.lblPriceDay31.Location = new System.Drawing.Point(1595, 94);
             this.lblPriceDay31.Name = "lblPriceDay31";
-            this.lblPriceDay31.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay31.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay31.TabIndex = 83;
-            this.lblPriceDay31.Text = "0";
+            this.lblPriceDay31.Text = "125AZN";
             // 
             // lblPriceDay30
             // 
             this.lblPriceDay30.AutoSize = true;
-            this.lblPriceDay30.Location = new System.Drawing.Point(1503, 94);
+            this.lblPriceDay30.Location = new System.Drawing.Point(1495, 94);
             this.lblPriceDay30.Name = "lblPriceDay30";
-            this.lblPriceDay30.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay30.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay30.TabIndex = 83;
-            this.lblPriceDay30.Text = "0";
+            this.lblPriceDay30.Text = "125AZN";
             // 
             // lblPriceDay15
             // 
             this.lblPriceDay15.AutoSize = true;
-            this.lblPriceDay15.Location = new System.Drawing.Point(1523, 44);
+            this.lblPriceDay15.Location = new System.Drawing.Point(1533, 44);
             this.lblPriceDay15.Name = "lblPriceDay15";
-            this.lblPriceDay15.Size = new System.Drawing.Size(13, 13);
+            this.lblPriceDay15.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay15.TabIndex = 83;
-            this.lblPriceDay15.Text = "0";
+            this.lblPriceDay15.Text = "125AZN";
             // 
             // label36
             // 
@@ -1186,7 +1186,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(1467, 19);
+            this.label35.Location = new System.Drawing.Point(1490, 19);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(42, 13);
             this.label35.TabIndex = 79;
@@ -1194,14 +1194,14 @@
             // 
             // CUD15
             // 
-            this.CUD15.Location = new System.Drawing.Point(1464, 37);
+            this.CUD15.Location = new System.Drawing.Point(1487, 37);
             this.CUD15.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
             this.CUD15.Name = "CUD15";
-            this.CUD15.Size = new System.Drawing.Size(53, 20);
+            this.CUD15.Size = new System.Drawing.Size(40, 20);
             this.CUD15.TabIndex = 78;
             // 
             // lblPrice
@@ -1233,7 +1233,7 @@
             0,
             0});
             this.CUD31.Name = "CUD31";
-            this.CUD31.Size = new System.Drawing.Size(53, 20);
+            this.CUD31.Size = new System.Drawing.Size(40, 20);
             this.CUD31.TabIndex = 74;
             // 
             // label33
@@ -1254,7 +1254,7 @@
             0,
             0});
             this.CUD30.Name = "CUD30";
-            this.CUD30.Size = new System.Drawing.Size(53, 20);
+            this.CUD30.Size = new System.Drawing.Size(40, 20);
             this.CUD30.TabIndex = 72;
             // 
             // label32
@@ -1275,7 +1275,7 @@
             0,
             0});
             this.CUD29.Name = "CUD29";
-            this.CUD29.Size = new System.Drawing.Size(53, 20);
+            this.CUD29.Size = new System.Drawing.Size(40, 20);
             this.CUD29.TabIndex = 70;
             // 
             // label31
@@ -1296,7 +1296,7 @@
             0,
             0});
             this.CUD28.Name = "CUD28";
-            this.CUD28.Size = new System.Drawing.Size(46, 20);
+            this.CUD28.Size = new System.Drawing.Size(40, 20);
             this.CUD28.TabIndex = 68;
             // 
             // label30
@@ -1317,7 +1317,7 @@
             0,
             0});
             this.CUD27.Name = "CUD27";
-            this.CUD27.Size = new System.Drawing.Size(53, 20);
+            this.CUD27.Size = new System.Drawing.Size(40, 20);
             this.CUD27.TabIndex = 66;
             // 
             // label29
@@ -1338,7 +1338,7 @@
             0,
             0});
             this.CUD26.Name = "CUD26";
-            this.CUD26.Size = new System.Drawing.Size(53, 20);
+            this.CUD26.Size = new System.Drawing.Size(40, 20);
             this.CUD26.TabIndex = 64;
             // 
             // label28
@@ -1359,7 +1359,7 @@
             0,
             0});
             this.CUD25.Name = "CUD25";
-            this.CUD25.Size = new System.Drawing.Size(45, 20);
+            this.CUD25.Size = new System.Drawing.Size(40, 20);
             this.CUD25.TabIndex = 62;
             // 
             // label27
@@ -1380,7 +1380,7 @@
             0,
             0});
             this.CUD24.Name = "CUD24";
-            this.CUD24.Size = new System.Drawing.Size(53, 20);
+            this.CUD24.Size = new System.Drawing.Size(40, 20);
             this.CUD24.TabIndex = 60;
             // 
             // label26
@@ -1401,7 +1401,7 @@
             0,
             0});
             this.CUD23.Name = "CUD23";
-            this.CUD23.Size = new System.Drawing.Size(53, 20);
+            this.CUD23.Size = new System.Drawing.Size(40, 20);
             this.CUD23.TabIndex = 58;
             // 
             // label25
@@ -1422,7 +1422,7 @@
             0,
             0});
             this.CUD22.Name = "CUD22";
-            this.CUD22.Size = new System.Drawing.Size(53, 20);
+            this.CUD22.Size = new System.Drawing.Size(40, 20);
             this.CUD22.TabIndex = 56;
             // 
             // label24
@@ -1443,7 +1443,7 @@
             0,
             0});
             this.CUD21.Name = "CUD21";
-            this.CUD21.Size = new System.Drawing.Size(53, 20);
+            this.CUD21.Size = new System.Drawing.Size(40, 20);
             this.CUD21.TabIndex = 54;
             // 
             // label23
@@ -1464,7 +1464,7 @@
             0,
             0});
             this.CUD20.Name = "CUD20";
-            this.CUD20.Size = new System.Drawing.Size(53, 20);
+            this.CUD20.Size = new System.Drawing.Size(40, 20);
             this.CUD20.TabIndex = 52;
             // 
             // label22
@@ -1485,7 +1485,7 @@
             0,
             0});
             this.CUD19.Name = "CUD19";
-            this.CUD19.Size = new System.Drawing.Size(53, 20);
+            this.CUD19.Size = new System.Drawing.Size(40, 20);
             this.CUD19.TabIndex = 50;
             // 
             // label21
@@ -1506,7 +1506,7 @@
             0,
             0});
             this.CUD18.Name = "CUD18";
-            this.CUD18.Size = new System.Drawing.Size(53, 20);
+            this.CUD18.Size = new System.Drawing.Size(40, 20);
             this.CUD18.TabIndex = 48;
             // 
             // label20
@@ -1527,7 +1527,7 @@
             0,
             0});
             this.CUD17.Name = "CUD17";
-            this.CUD17.Size = new System.Drawing.Size(53, 20);
+            this.CUD17.Size = new System.Drawing.Size(40, 20);
             this.CUD17.TabIndex = 46;
             // 
             // label19
@@ -1548,13 +1548,13 @@
             0,
             0});
             this.CUD16.Name = "CUD16";
-            this.CUD16.Size = new System.Drawing.Size(53, 20);
+            this.CUD16.Size = new System.Drawing.Size(40, 20);
             this.CUD16.TabIndex = 44;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1369, 19);
+            this.label18.Location = new System.Drawing.Point(1383, 19);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(42, 13);
             this.label18.TabIndex = 43;
@@ -1562,20 +1562,20 @@
             // 
             // CUD14
             // 
-            this.CUD14.Location = new System.Drawing.Point(1366, 37);
+            this.CUD14.Location = new System.Drawing.Point(1380, 37);
             this.CUD14.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
             this.CUD14.Name = "CUD14";
-            this.CUD14.Size = new System.Drawing.Size(53, 20);
+            this.CUD14.Size = new System.Drawing.Size(40, 20);
             this.CUD14.TabIndex = 42;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1271, 19);
+            this.label17.Location = new System.Drawing.Point(1278, 19);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(42, 13);
             this.label17.TabIndex = 41;
@@ -1583,14 +1583,14 @@
             // 
             // CUD13
             // 
-            this.CUD13.Location = new System.Drawing.Point(1268, 37);
+            this.CUD13.Location = new System.Drawing.Point(1275, 37);
             this.CUD13.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
             this.CUD13.Name = "CUD13";
-            this.CUD13.Size = new System.Drawing.Size(53, 20);
+            this.CUD13.Size = new System.Drawing.Size(40, 20);
             this.CUD13.TabIndex = 40;
             // 
             // label16
@@ -1611,7 +1611,7 @@
             0,
             0});
             this.CUD12.Name = "CUD12";
-            this.CUD12.Size = new System.Drawing.Size(53, 20);
+            this.CUD12.Size = new System.Drawing.Size(40, 20);
             this.CUD12.TabIndex = 38;
             // 
             // label15
@@ -1632,7 +1632,7 @@
             0,
             0});
             this.CUD11.Name = "CUD11";
-            this.CUD11.Size = new System.Drawing.Size(53, 20);
+            this.CUD11.Size = new System.Drawing.Size(40, 20);
             this.CUD11.TabIndex = 36;
             // 
             // label14
@@ -1648,13 +1648,18 @@
             // 
             this.CUD10.Location = new System.Drawing.Point(966, 37);
             this.CUD10.Maximum = new decimal(new int[] {
-            200,
+            500,
             0,
             0,
             0});
             this.CUD10.Name = "CUD10";
-            this.CUD10.Size = new System.Drawing.Size(53, 20);
+            this.CUD10.Size = new System.Drawing.Size(40, 20);
             this.CUD10.TabIndex = 34;
+            this.CUD10.Value = new decimal(new int[] {
+            350,
+            0,
+            0,
+            0});
             // 
             // label13
             // 
@@ -1674,7 +1679,7 @@
             0,
             0});
             this.CUD9.Name = "CUD9";
-            this.CUD9.Size = new System.Drawing.Size(53, 20);
+            this.CUD9.Size = new System.Drawing.Size(40, 20);
             this.CUD9.TabIndex = 32;
             // 
             // label12
@@ -1695,7 +1700,7 @@
             0,
             0});
             this.CUD8.Name = "CUD8";
-            this.CUD8.Size = new System.Drawing.Size(53, 20);
+            this.CUD8.Size = new System.Drawing.Size(40, 20);
             this.CUD8.TabIndex = 30;
             // 
             // label11
@@ -1716,7 +1721,7 @@
             0,
             0});
             this.CUD7.Name = "CUD7";
-            this.CUD7.Size = new System.Drawing.Size(53, 20);
+            this.CUD7.Size = new System.Drawing.Size(40, 20);
             this.CUD7.TabIndex = 28;
             // 
             // label10
@@ -1737,7 +1742,7 @@
             0,
             0});
             this.CUD6.Name = "CUD6";
-            this.CUD6.Size = new System.Drawing.Size(53, 20);
+            this.CUD6.Size = new System.Drawing.Size(40, 20);
             this.CUD6.TabIndex = 26;
             // 
             // label9
@@ -1758,7 +1763,7 @@
             0,
             0});
             this.CUD5.Name = "CUD5";
-            this.CUD5.Size = new System.Drawing.Size(53, 20);
+            this.CUD5.Size = new System.Drawing.Size(40, 20);
             this.CUD5.TabIndex = 24;
             // 
             // label8
@@ -1779,7 +1784,7 @@
             0,
             0});
             this.CUD4.Name = "CUD4";
-            this.CUD4.Size = new System.Drawing.Size(53, 20);
+            this.CUD4.Size = new System.Drawing.Size(40, 20);
             this.CUD4.TabIndex = 22;
             // 
             // label7
@@ -1800,7 +1805,7 @@
             0,
             0});
             this.CUD3.Name = "CUD3";
-            this.CUD3.Size = new System.Drawing.Size(53, 20);
+            this.CUD3.Size = new System.Drawing.Size(40, 20);
             this.CUD3.TabIndex = 20;
             // 
             // label6
@@ -1821,7 +1826,7 @@
             0,
             0});
             this.CUD2.Name = "CUD2";
-            this.CUD2.Size = new System.Drawing.Size(53, 20);
+            this.CUD2.Size = new System.Drawing.Size(40, 20);
             this.CUD2.TabIndex = 18;
             // 
             // lbDay1
@@ -1842,7 +1847,7 @@
             0,
             0});
             this.CUD1.Name = "CUD1";
-            this.CUD1.Size = new System.Drawing.Size(53, 20);
+            this.CUD1.Size = new System.Drawing.Size(40, 20);
             this.CUD1.TabIndex = 16;
             // 
             // linkLabel2
@@ -1875,9 +1880,6 @@
             this.btnPrint.TabIndex = 18;
             this.btnPrint.Text = "Çap";
             this.btnPrint.UseVisualStyleBackColor = true;
-            // 
-            // printDocument1
-            // 
             // 
             // MarketForm
             // 
