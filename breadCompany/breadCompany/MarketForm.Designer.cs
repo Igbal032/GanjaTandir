@@ -881,7 +881,7 @@
             // lblPriceDay16
             // 
             this.lblPriceDay16.AutoSize = true;
-            this.lblPriceDay16.Location = new System.Drawing.Point(78, 93);
+            this.lblPriceDay16.Location = new System.Drawing.Point(66, 93);
             this.lblPriceDay16.Name = "lblPriceDay16";
             this.lblPriceDay16.Size = new System.Drawing.Size(13, 13);
             this.lblPriceDay16.TabIndex = 98;
@@ -899,7 +899,7 @@
             // lblPriceDay17
             // 
             this.lblPriceDay17.AutoSize = true;
-            this.lblPriceDay17.Location = new System.Drawing.Point(178, 94);
+            this.lblPriceDay17.Location = new System.Drawing.Point(166, 94);
             this.lblPriceDay17.Name = "lblPriceDay17";
             this.lblPriceDay17.Size = new System.Drawing.Size(13, 13);
             this.lblPriceDay17.TabIndex = 96;
@@ -989,7 +989,7 @@
             // lblPriceDay21
             // 
             this.lblPriceDay21.AutoSize = true;
-            this.lblPriceDay21.Location = new System.Drawing.Point(593, 94);
+            this.lblPriceDay21.Location = new System.Drawing.Point(584, 94);
             this.lblPriceDay21.Name = "lblPriceDay21";
             this.lblPriceDay21.Size = new System.Drawing.Size(13, 13);
             this.lblPriceDay21.TabIndex = 95;
@@ -998,7 +998,7 @@
             // lblPriceDay20
             // 
             this.lblPriceDay20.AutoSize = true;
-            this.lblPriceDay20.Location = new System.Drawing.Point(488, 94);
+            this.lblPriceDay20.Location = new System.Drawing.Point(476, 94);
             this.lblPriceDay20.Name = "lblPriceDay20";
             this.lblPriceDay20.Size = new System.Drawing.Size(13, 13);
             this.lblPriceDay20.TabIndex = 95;
@@ -1007,7 +1007,7 @@
             // lblPriceDay19
             // 
             this.lblPriceDay19.AutoSize = true;
-            this.lblPriceDay19.Location = new System.Drawing.Point(383, 94);
+            this.lblPriceDay19.Location = new System.Drawing.Point(371, 94);
             this.lblPriceDay19.Name = "lblPriceDay19";
             this.lblPriceDay19.Size = new System.Drawing.Size(13, 13);
             this.lblPriceDay19.TabIndex = 95;
@@ -1016,7 +1016,7 @@
             // lblPriceDay18
             // 
             this.lblPriceDay18.AutoSize = true;
-            this.lblPriceDay18.Location = new System.Drawing.Point(280, 94);
+            this.lblPriceDay18.Location = new System.Drawing.Point(268, 94);
             this.lblPriceDay18.Name = "lblPriceDay18";
             this.lblPriceDay18.Size = new System.Drawing.Size(13, 13);
             this.lblPriceDay18.TabIndex = 95;
@@ -1195,6 +1195,11 @@
             // CUD15
             // 
             this.CUD15.Location = new System.Drawing.Point(1464, 37);
+            this.CUD15.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD15.Name = "CUD15";
             this.CUD15.Size = new System.Drawing.Size(53, 20);
             this.CUD15.TabIndex = 78;
@@ -1222,6 +1227,11 @@
             // CUD31
             // 
             this.CUD31.Location = new System.Drawing.Point(1549, 87);
+            this.CUD31.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD31.Name = "CUD31";
             this.CUD31.Size = new System.Drawing.Size(53, 20);
             this.CUD31.TabIndex = 74;
@@ -1238,6 +1248,11 @@
             // CUD30
             // 
             this.CUD30.Location = new System.Drawing.Point(1449, 87);
+            this.CUD30.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD30.Name = "CUD30";
             this.CUD30.Size = new System.Drawing.Size(53, 20);
             this.CUD30.TabIndex = 72;
@@ -1254,6 +1269,11 @@
             // CUD29
             // 
             this.CUD29.Location = new System.Drawing.Point(1344, 87);
+            this.CUD29.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD29.Name = "CUD29";
             this.CUD29.Size = new System.Drawing.Size(53, 20);
             this.CUD29.TabIndex = 70;
@@ -1270,6 +1290,11 @@
             // CUD28
             // 
             this.CUD28.Location = new System.Drawing.Point(1246, 87);
+            this.CUD28.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD28.Name = "CUD28";
             this.CUD28.Size = new System.Drawing.Size(46, 20);
             this.CUD28.TabIndex = 68;
@@ -1286,6 +1311,11 @@
             // CUD27
             // 
             this.CUD27.Location = new System.Drawing.Point(1146, 87);
+            this.CUD27.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD27.Name = "CUD27";
             this.CUD27.Size = new System.Drawing.Size(53, 20);
             this.CUD27.TabIndex = 66;
@@ -1302,6 +1332,11 @@
             // CUD26
             // 
             this.CUD26.Location = new System.Drawing.Point(1042, 87);
+            this.CUD26.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD26.Name = "CUD26";
             this.CUD26.Size = new System.Drawing.Size(53, 20);
             this.CUD26.TabIndex = 64;
@@ -1318,6 +1353,11 @@
             // CUD25
             // 
             this.CUD25.Location = new System.Drawing.Point(945, 87);
+            this.CUD25.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD25.Name = "CUD25";
             this.CUD25.Size = new System.Drawing.Size(45, 20);
             this.CUD25.TabIndex = 62;
@@ -1334,6 +1374,11 @@
             // CUD24
             // 
             this.CUD24.Location = new System.Drawing.Point(840, 87);
+            this.CUD24.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD24.Name = "CUD24";
             this.CUD24.Size = new System.Drawing.Size(53, 20);
             this.CUD24.TabIndex = 60;
@@ -1350,6 +1395,11 @@
             // CUD23
             // 
             this.CUD23.Location = new System.Drawing.Point(740, 87);
+            this.CUD23.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD23.Name = "CUD23";
             this.CUD23.Size = new System.Drawing.Size(53, 20);
             this.CUD23.TabIndex = 58;
@@ -1366,6 +1416,11 @@
             // CUD22
             // 
             this.CUD22.Location = new System.Drawing.Point(639, 87);
+            this.CUD22.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD22.Name = "CUD22";
             this.CUD22.Size = new System.Drawing.Size(53, 20);
             this.CUD22.TabIndex = 56;
@@ -1373,7 +1428,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(537, 69);
+            this.label24.Location = new System.Drawing.Point(525, 69);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(42, 13);
             this.label24.TabIndex = 55;
@@ -1381,7 +1436,12 @@
             // 
             // CUD21
             // 
-            this.CUD21.Location = new System.Drawing.Point(534, 87);
+            this.CUD21.Location = new System.Drawing.Point(522, 87);
+            this.CUD21.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD21.Name = "CUD21";
             this.CUD21.Size = new System.Drawing.Size(53, 20);
             this.CUD21.TabIndex = 54;
@@ -1389,7 +1449,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(432, 69);
+            this.label23.Location = new System.Drawing.Point(420, 69);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(42, 13);
             this.label23.TabIndex = 53;
@@ -1397,7 +1457,12 @@
             // 
             // CUD20
             // 
-            this.CUD20.Location = new System.Drawing.Point(429, 87);
+            this.CUD20.Location = new System.Drawing.Point(417, 87);
+            this.CUD20.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD20.Name = "CUD20";
             this.CUD20.Size = new System.Drawing.Size(53, 20);
             this.CUD20.TabIndex = 52;
@@ -1405,7 +1470,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(329, 69);
+            this.label22.Location = new System.Drawing.Point(317, 69);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(42, 13);
             this.label22.TabIndex = 51;
@@ -1413,7 +1478,12 @@
             // 
             // CUD19
             // 
-            this.CUD19.Location = new System.Drawing.Point(326, 87);
+            this.CUD19.Location = new System.Drawing.Point(314, 87);
+            this.CUD19.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD19.Name = "CUD19";
             this.CUD19.Size = new System.Drawing.Size(53, 20);
             this.CUD19.TabIndex = 50;
@@ -1421,7 +1491,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(227, 69);
+            this.label21.Location = new System.Drawing.Point(215, 69);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(42, 13);
             this.label21.TabIndex = 49;
@@ -1429,7 +1499,12 @@
             // 
             // CUD18
             // 
-            this.CUD18.Location = new System.Drawing.Point(224, 87);
+            this.CUD18.Location = new System.Drawing.Point(212, 87);
+            this.CUD18.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD18.Name = "CUD18";
             this.CUD18.Size = new System.Drawing.Size(53, 20);
             this.CUD18.TabIndex = 48;
@@ -1437,7 +1512,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(127, 69);
+            this.label20.Location = new System.Drawing.Point(115, 69);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(42, 13);
             this.label20.TabIndex = 47;
@@ -1445,7 +1520,12 @@
             // 
             // CUD17
             // 
-            this.CUD17.Location = new System.Drawing.Point(124, 87);
+            this.CUD17.Location = new System.Drawing.Point(112, 87);
+            this.CUD17.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD17.Name = "CUD17";
             this.CUD17.Size = new System.Drawing.Size(53, 20);
             this.CUD17.TabIndex = 46;
@@ -1453,7 +1533,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(24, 69);
+            this.label19.Location = new System.Drawing.Point(12, 69);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(42, 13);
             this.label19.TabIndex = 45;
@@ -1461,7 +1541,12 @@
             // 
             // CUD16
             // 
-            this.CUD16.Location = new System.Drawing.Point(21, 87);
+            this.CUD16.Location = new System.Drawing.Point(9, 87);
+            this.CUD16.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD16.Name = "CUD16";
             this.CUD16.Size = new System.Drawing.Size(53, 20);
             this.CUD16.TabIndex = 44;
@@ -1478,6 +1563,11 @@
             // CUD14
             // 
             this.CUD14.Location = new System.Drawing.Point(1366, 37);
+            this.CUD14.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD14.Name = "CUD14";
             this.CUD14.Size = new System.Drawing.Size(53, 20);
             this.CUD14.TabIndex = 42;
@@ -1494,6 +1584,11 @@
             // CUD13
             // 
             this.CUD13.Location = new System.Drawing.Point(1268, 37);
+            this.CUD13.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD13.Name = "CUD13";
             this.CUD13.Size = new System.Drawing.Size(53, 20);
             this.CUD13.TabIndex = 40;
@@ -1510,6 +1605,11 @@
             // CUD12
             // 
             this.CUD12.Location = new System.Drawing.Point(1170, 37);
+            this.CUD12.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD12.Name = "CUD12";
             this.CUD12.Size = new System.Drawing.Size(53, 20);
             this.CUD12.TabIndex = 38;
@@ -1526,6 +1626,11 @@
             // CUD11
             // 
             this.CUD11.Location = new System.Drawing.Point(1070, 37);
+            this.CUD11.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD11.Name = "CUD11";
             this.CUD11.Size = new System.Drawing.Size(53, 20);
             this.CUD11.TabIndex = 36;
@@ -1542,6 +1647,11 @@
             // CUD10
             // 
             this.CUD10.Location = new System.Drawing.Point(966, 37);
+            this.CUD10.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD10.Name = "CUD10";
             this.CUD10.Size = new System.Drawing.Size(53, 20);
             this.CUD10.TabIndex = 34;
@@ -1558,6 +1668,11 @@
             // CUD9
             // 
             this.CUD9.Location = new System.Drawing.Point(869, 37);
+            this.CUD9.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD9.Name = "CUD9";
             this.CUD9.Size = new System.Drawing.Size(53, 20);
             this.CUD9.TabIndex = 32;
@@ -1574,6 +1689,11 @@
             // CUD8
             // 
             this.CUD8.Location = new System.Drawing.Point(764, 37);
+            this.CUD8.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD8.Name = "CUD8";
             this.CUD8.Size = new System.Drawing.Size(53, 20);
             this.CUD8.TabIndex = 30;
@@ -1590,6 +1710,11 @@
             // CUD7
             // 
             this.CUD7.Location = new System.Drawing.Point(664, 37);
+            this.CUD7.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD7.Name = "CUD7";
             this.CUD7.Size = new System.Drawing.Size(53, 20);
             this.CUD7.TabIndex = 28;
@@ -1606,6 +1731,11 @@
             // CUD6
             // 
             this.CUD6.Location = new System.Drawing.Point(563, 37);
+            this.CUD6.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD6.Name = "CUD6";
             this.CUD6.Size = new System.Drawing.Size(53, 20);
             this.CUD6.TabIndex = 26;
@@ -1622,6 +1752,11 @@
             // CUD5
             // 
             this.CUD5.Location = new System.Drawing.Point(458, 37);
+            this.CUD5.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD5.Name = "CUD5";
             this.CUD5.Size = new System.Drawing.Size(53, 20);
             this.CUD5.TabIndex = 24;
@@ -1638,6 +1773,11 @@
             // CUD4
             // 
             this.CUD4.Location = new System.Drawing.Point(353, 37);
+            this.CUD4.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD4.Name = "CUD4";
             this.CUD4.Size = new System.Drawing.Size(53, 20);
             this.CUD4.TabIndex = 22;
@@ -1654,6 +1794,11 @@
             // CUD3
             // 
             this.CUD3.Location = new System.Drawing.Point(250, 37);
+            this.CUD3.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD3.Name = "CUD3";
             this.CUD3.Size = new System.Drawing.Size(53, 20);
             this.CUD3.TabIndex = 20;
@@ -1670,6 +1815,11 @@
             // CUD2
             // 
             this.CUD2.Location = new System.Drawing.Point(148, 37);
+            this.CUD2.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD2.Name = "CUD2";
             this.CUD2.Size = new System.Drawing.Size(53, 20);
             this.CUD2.TabIndex = 18;
@@ -1686,6 +1836,11 @@
             // CUD1
             // 
             this.CUD1.Location = new System.Drawing.Point(45, 37);
+            this.CUD1.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.CUD1.Name = "CUD1";
             this.CUD1.Size = new System.Drawing.Size(53, 20);
             this.CUD1.TabIndex = 16;
@@ -1720,11 +1875,9 @@
             this.btnPrint.TabIndex = 18;
             this.btnPrint.Text = "Çap";
             this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // printDocument1
             // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // MarketForm
             // 

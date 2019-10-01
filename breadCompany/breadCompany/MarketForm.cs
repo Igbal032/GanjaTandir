@@ -115,7 +115,7 @@ namespace breadCompany
             var currentYear = DateTime.Now.Year;
             try
             {
-                dgvMarketList.DataSource = db.CountForDays.Where(w => w.Subsidiary.MarketId == Id && w.MonthId == monthId && w.Year == currentYear).Select(s => new
+                dgvMarketList.DataSource = db.CountForDays.Where(w =>w.DeletedDate==null&& w.Subsidiary.MarketId == Id && w.MonthId == monthId && w.Year == currentYear).Select(s => new
                 {
                     s.Id,
                     s.MarketName,
@@ -333,7 +333,6 @@ namespace breadCompany
             {
 
                 grbEdit.Visible = true;
-
                 int id = Convert.ToInt32(dgvMarketList.Rows[e.RowIndex].Cells[0].Value);
                 selectedRowId = id;
                 var findRow = db.CountForDays.Find(id);
@@ -524,24 +523,5 @@ namespace breadCompany
             logForm.Show();
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            printDocument1.Print();
-        }
-        private void CaptureScreen()
-        {
-            Graphics myGraphics = this.CreateGraphics();
-            Size s = this.Size;
-            Bitmap memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
-            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
-            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
-        }
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            Bitmap bm = new Bitmap(this.dgvMarketList.Width, this.dgvMarketList.Height);
-            dgvMarketList.DrawToBitmap(bm, new Rectangle(0,0, this.dgvMarketList.Width, this.dgvMarketList.Height));
-            e.Graphics.DrawImage(bm, 0, 0);
-            CaptureScreen();
-        }
     }
 }
