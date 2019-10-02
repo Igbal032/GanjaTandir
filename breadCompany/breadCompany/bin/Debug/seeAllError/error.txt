@@ -1,0 +1,9 @@
+
+System.ArgumentOutOfRangeException: Month must be between one and twelve.
+Parameter name: month
+   at System.DateTime.DaysInMonth(Int32 year, Int32 month)
+   at breadCompany.printForm.PrintForm_Load(Object sender, EventArgs e) in D:\Project(Main)\breadCompany\breadCompany\printForm.cs:line 104:10/2/2019 11:36:06 PM
+System.ArgumentOutOfRangeException: Month must be between one and twelve.
+Parameter name: month
+   at System.DateTime.DaysInMonth(Int32 year, Int32 month)
+   at breadCompany.printForm.PrintForm_Load(Object sender, EventArgs e) in D:\Project(Main)\breadCompany\breadCompany\printForm.cs:line 104:10/2/2019 11:37:22 PM

@@ -55,6 +55,7 @@ namespace breadCompany.Models
         public Nullable<decimal> TotalPrice { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> DeletedDate { get; set; }
+        public Nullable<decimal> SumInOneMonth { get; set; }
     
         public virtual Months Months { get; set; }
         public virtual Subsidiary Subsidiary { get; set; }

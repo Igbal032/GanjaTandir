@@ -45,6 +45,7 @@
     <Property Name="TotalPrice" Type="money" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="SumInOneMonth" Type="money" />
   </EntityType>
   <EntityType Name="MarketList">
     <Key>

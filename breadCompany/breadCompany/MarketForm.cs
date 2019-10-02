@@ -1,14 +1,10 @@
 ﻿using breadCompany.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Printing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace breadCompany
 {
@@ -115,7 +111,7 @@ namespace breadCompany
             var currentYear = DateTime.Now.Year;
             try
             {
-                dgvMarketList.DataSource = db.CountForDays.Where(w =>w.DeletedDate==null&& w.Subsidiary.MarketId == Id && w.MonthId == monthId && w.Year == currentYear).Select(s => new
+                dgvMarketList.DataSource = db.CountForDays.Where(w => w.DeletedDate == null && w.Subsidiary.MarketId == Id && w.MonthId == monthId && w.Year == currentYear).Select(s => new
                 {
                     s.Id,
                     s.MarketName,
@@ -154,6 +150,7 @@ namespace breadCompany
                     s.PriceOfOne,
                     s.TotalCount,
                     s.TotalPrice,
+                    s.SumInOneMonth,
 
                 }).ToList();
                 int daysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, monthId);
@@ -196,10 +193,10 @@ namespace breadCompany
         {
             try
             {
-                var marketList = db.CountForDays.Where(w => w.Subsidiary.MarketId == Id && w.Subsidiary.MarketList.UserId == activeUser.Id).ToList();
+                var marketList = db.CountForDays.Where(w => w.Subsidiary.MarketId == Id && w.Subsidiary.MarketList.UserId == activeUser.Id && w.Year == DateTime.Now.Year).ToList();
+
                 foreach (var item in marketList)
                 {
-
                     int? totalCount = Convert.ToInt32(item.Day1) + Convert.ToInt32(item.Day2) + Convert.ToInt32(item.Day3) + Convert.ToInt32(item.Day4) + Convert.ToInt32(item.Day5) + Convert.ToInt32(item.Day6) + Convert.ToInt32(item.Day7) + Convert.ToInt32(item.Day8)
                           + Convert.ToInt32(item.Day9) + Convert.ToInt32(item.Day10) + Convert.ToInt32(item.Day11) + Convert.ToInt32(item.Day12) + Convert.ToInt32(item.Day13) + Convert.ToInt32(item.Day14) + Convert.ToInt32(item.Day15)
                           + Convert.ToInt32(item.Day16) + Convert.ToInt32(item.Day17) + Convert.ToInt32(item.Day18) + Convert.ToInt32(item.Day19) + Convert.ToInt32(item.Day20) + Convert.ToInt32(item.Day21) + Convert.ToInt32(item.Day22) + Convert.ToInt32(item.Day23)
@@ -208,10 +205,11 @@ namespace breadCompany
                     decimal onePrice = Convert.ToDecimal(item.PriceOfOne);
                     decimal? totalMoney = onePrice * totalCount;
                     item.TotalCount = totalCount;
-                    int? x = Convert.ToInt32(item.Day25);
                     item.TotalPrice = totalMoney;
+                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
+
             }
             catch (Exception ex)
             {
@@ -235,7 +233,7 @@ namespace breadCompany
                 ComboItem selectedMonth = cmbMonthForCreateMonth.SelectedItem as ComboItem;
                 double price = Convert.ToDouble(numPrice.Value);
 
-                if (price==0)
+                if (price == 0)
                 {
                     MessageBox.Show("Qiyməti daxil edin!!");
                     return;
@@ -248,9 +246,9 @@ namespace breadCompany
 
                 foreach (var item in subMarket)
                 {
-                    var check = db.CountForDays.Where(w => w.DeletedDate == null &&w.MarketName==item.Subsidiary1 &&w.MonthId == monthId
+                    var check = db.CountForDays.Where(w => w.DeletedDate == null && w.MarketName == item.Subsidiary1 && w.MonthId == monthId
                     && w.Subsidiary.MarketId == marketId && w.Year == currentYear).FirstOrDefault();
-                    if (check==null)
+                    if (check == null)
                     {
                         var relatedMarket = new CountForDays();
                         relatedMarket.Year = currentYear;
@@ -289,8 +287,6 @@ namespace breadCompany
             CreateSubsudiary createSub = new CreateSubsudiary(activeUser);
             createSub.Show();
             this.Hide();
-
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -322,22 +318,16 @@ namespace breadCompany
             btnShowNewMonthGrid.Visible = true;
         }
 
-        private void dgvMarketList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvMarketList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
-
                 grbEdit.Visible = true;
                 int id = Convert.ToInt32(dgvMarketList.Rows[e.RowIndex].Cells[0].Value);
                 selectedRowId = id;
                 var findRow = db.CountForDays.Find(id);
 
-                CUD1.Value = Convert.ToInt32(findRow.Day1); lblPriceDay1.Text = (findRow.Day1*findRow.PriceOfOne).ToString() + AZN;
+                CUD1.Value = Convert.ToInt32(findRow.Day1); lblPriceDay1.Text = (findRow.Day1 * findRow.PriceOfOne).ToString() + AZN;
                 CUD2.Value = Convert.ToInt32(findRow.Day2); lblPriceDay2.Text = (findRow.Day2 * findRow.PriceOfOne).ToString() + AZN;
                 CUD3.Value = Convert.ToInt32(findRow.Day3); lblPriceDay3.Text = (findRow.Day3 * findRow.PriceOfOne).ToString() + AZN;
                 CUD4.Value = Convert.ToInt32(findRow.Day4); lblPriceDay4.Text = (findRow.Day4 * findRow.PriceOfOne).ToString() + AZN;
@@ -358,7 +348,7 @@ namespace breadCompany
                 CUD19.Value = Convert.ToInt32(findRow.Day19); lblPriceDay19.Text = (findRow.Day19 * findRow.PriceOfOne).ToString() + AZN;
                 CUD20.Value = Convert.ToInt32(findRow.Day20); lblPriceDay20.Text = (findRow.Day20 * findRow.PriceOfOne).ToString() + AZN;
                 CUD21.Value = Convert.ToInt32(findRow.Day21); lblPriceDay21.Text = (findRow.Day21 * findRow.PriceOfOne).ToString() + AZN;
-                CUD22.Value = Convert.ToInt32(findRow.Day22); lblPriceDay22.Text = (findRow.Day22* findRow.PriceOfOne).ToString() + AZN;
+                CUD22.Value = Convert.ToInt32(findRow.Day22); lblPriceDay22.Text = (findRow.Day22 * findRow.PriceOfOne).ToString() + AZN;
                 CUD23.Value = Convert.ToInt32(findRow.Day23); lblPriceDay23.Text = (findRow.Day23 * findRow.PriceOfOne).ToString() + AZN;
                 CUD24.Value = Convert.ToInt32(findRow.Day24); lblPriceDay24.Text = (findRow.Day24 * findRow.PriceOfOne).ToString() + AZN;
                 CUD25.Value = Convert.ToInt32(findRow.Day25); lblPriceDay25.Text = (findRow.Day25 * findRow.PriceOfOne).ToString() + AZN;
@@ -406,7 +396,7 @@ namespace breadCompany
                 else if (DateTime.DaysInMonth(DateTime.Now.Year, monthId) == 31)
                 {
                     CUD29.Value = Convert.ToInt32(findRow.Day29);
-                    lblPriceDay29.Text = (findRow.Day29 * findRow.PriceOfOne).ToString() +AZN;
+                    lblPriceDay29.Text = (findRow.Day29 * findRow.PriceOfOne).ToString() + AZN;
                     CUD30.Value = Convert.ToInt32(findRow.Day30);
                     lblPriceDay30.Text = (findRow.Day30 * findRow.PriceOfOne).ToString() + AZN;
                     CUD31.Value = Convert.ToInt32(findRow.Day31);
@@ -422,9 +412,7 @@ namespace breadCompany
                     lblPriceDay31.Visible = true;
                 }
                 lblTotalAmount.Text = 0.ToString() + "  AZN";
-
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Error Message: " + ex);
@@ -450,7 +438,7 @@ namespace breadCompany
                 findRow.Day31 = (int)CUD31.Value; findRow.PriceOfOne = Convert.ToDouble(txtPrice.Text);
                 lblPriceDay1.Text = (findRow.Day1 * findRow.PriceOfOne).ToString() + AZN;
                 lblPriceDay2.Text = (findRow.Day2 * findRow.PriceOfOne).ToString() + AZN;
-                lblPriceDay3.Text = (findRow.Day3* findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay3.Text = (findRow.Day3 * findRow.PriceOfOne).ToString() + AZN;
                 lblPriceDay4.Text = (findRow.Day4 * findRow.PriceOfOne).ToString() + AZN;
                 lblPriceDay5.Text = (findRow.Day5 * findRow.PriceOfOne).ToString() + AZN;
                 lblPriceDay6.Text = (findRow.Day6 * findRow.PriceOfOne).ToString() + AZN;
@@ -472,7 +460,7 @@ namespace breadCompany
                 lblPriceDay22.Text = (findRow.Day22 * findRow.PriceOfOne).ToString() + AZN;
                 lblPriceDay23.Text = (findRow.Day23 * findRow.PriceOfOne).ToString() + AZN;
                 lblPriceDay24.Text = (findRow.Day24 * findRow.PriceOfOne).ToString() + AZN;
-                lblPriceDay25.Text = (findRow.Day25* findRow.PriceOfOne).ToString() + AZN;
+                lblPriceDay25.Text = (findRow.Day25 * findRow.PriceOfOne).ToString() + AZN;
                 lblPriceDay26.Text = (findRow.Day26 * findRow.PriceOfOne).ToString() + AZN;
                 lblPriceDay27.Text = (findRow.Day27 * findRow.PriceOfOne).ToString() + AZN;
                 lblPriceDay28.Text = (findRow.Day28 * findRow.PriceOfOne).ToString() + AZN;
@@ -503,7 +491,7 @@ namespace breadCompany
                 {
                     totalPrice += (double)row.TotalPrice;
                 }
-                lblTotalAmount.Text = totalPrice.ToString()+"  AZN";
+                lblTotalAmount.Text = totalPrice.ToString() + "  AZN";
             }
             catch (Exception ex)
             {

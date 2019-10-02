@@ -45,6 +45,7 @@
     <Property Name="TotalPrice" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="SumInOneMonth" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="Months" Relationship="Self.FK_CountForDays_Months" FromRole="CountForDays" ToRole="Months" />
     <NavigationProperty Name="Subsidiary" Relationship="Self.FK_CountForDays_Subsidiary" FromRole="CountForDays" ToRole="Subsidiary" />
   </EntityType>

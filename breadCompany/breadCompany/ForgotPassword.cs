@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace breadCompany
     public partial class ForgotPassword : Form
     {
         private readonly GanjaBreadCompanyEntity db;
+        const string folderForEroor = "seeAllError";
+        string pathTxt = Path.Combine(folderForEroor, "error.txt");     
         public ForgotPassword()
         {
             try
@@ -22,8 +25,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
             InitializeComponent();
         }
@@ -57,9 +60,10 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
+
     }
 }

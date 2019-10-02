@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,25 +15,25 @@ namespace breadCompany
     public partial class RegisterPart : Form
     {
         private readonly GanjaBreadCompanyEntity db;
+        const string folderForEroor = "seeAllError";
+        string pathTxt = Path.Combine(folderForEroor, "error.txt");
         public RegisterPart()
         {
             try
             {
                 db = new GanjaBreadCompanyEntity();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
             InitializeComponent();
 
         }
 
-        private void grpRegister_Enter(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -87,9 +88,10 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: "+ex);
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
+
     }
 }

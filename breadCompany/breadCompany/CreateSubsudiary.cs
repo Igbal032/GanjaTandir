@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace breadCompany
     public partial class CreateSubsudiary : Form
     {
         private readonly GanjaBreadCompanyEntity db;
+        const string folderForEroor = "seeAllError";
+        string pathTxt = Path.Combine(folderForEroor, "error.txt");
         Users activeUser;
         int selectedRowId;
         public CreateSubsudiary(Users user)
@@ -25,9 +28,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
             InitializeComponent();
         }
@@ -48,9 +50,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
 
@@ -63,7 +64,7 @@ namespace breadCompany
                     MessageBox.Show("Zəhmıət olmasa Filialin adını daxil edin!!");
                     return;
                 }
-                var subsidiary = db.Subsidiary.Any(w => w.Subsidiary1 == txtFlialNAme.Text&&w.DeletedDate==null);
+                var subsidiary = db.Subsidiary.Any(w => w.Subsidiary1 == txtFlialNAme.Text && w.DeletedDate == null);
                 if (subsidiary)
                 {
                     MessageBox.Show("Bu adda Filial var");
@@ -80,22 +81,31 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
 
 
         void dgvSubsidaryList()
         {
-            ComboItem selectedItem = cmbMarket.SelectedItem as ComboItem;
-            dgvSubsidary.DataSource = db.Subsidiary.Where(w=>w.DeletedDate==null&&w.MarketList.UserId==activeUser.Id&&w.MarketId==selectedItem.value).Select(s => new
+            try
             {
-                s.Id,
-                s.MarketList.MarketName,
-                s.Subsidiary1,
-            }).ToList();
+                ComboItem selectedItem = cmbMarket.SelectedItem as ComboItem;
+                dgvSubsidary.DataSource = db.Subsidiary.Where(w => w.DeletedDate == null && w.MarketList.UserId == activeUser.Id && w.MarketId == selectedItem.value).Select(s => new
+                {
+                    s.Id,
+                    s.MarketList.MarketName,
+                    s.Subsidiary1,
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
+            }
+
         }
 
         private void dgvSubsidary_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -112,8 +122,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
 
@@ -139,8 +149,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
 
@@ -161,8 +171,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
 

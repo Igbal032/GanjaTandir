@@ -66,6 +66,7 @@
             this.PriceOFOne = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SumInOneMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbMarkets = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnShowMarkets = new System.Windows.Forms.Button();
@@ -189,8 +190,6 @@
             this.CUD1 = new System.Windows.Forms.NumericUpDown();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.lblTotalAmount = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarketList)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.grpShowDays.SuspendLayout();
@@ -273,12 +272,12 @@
             this.MonthName,
             this.PriceOFOne,
             this.TotalCount,
-            this.TotalPrice});
+            this.TotalPrice,
+            this.SumInOneMonth});
             this.dgvMarketList.Location = new System.Drawing.Point(0, 378);
             this.dgvMarketList.Name = "dgvMarketList";
             this.dgvMarketList.Size = new System.Drawing.Size(1766, 408);
             this.dgvMarketList.TabIndex = 0;
-            this.dgvMarketList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarketList_CellContentClick);
             this.dgvMarketList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMarketList_RowHeaderMouseClick);
             // 
             // ID
@@ -540,6 +539,13 @@
             this.TotalPrice.Name = "TotalPrice";
             this.TotalPrice.Width = 53;
             // 
+            // SumInOneMonth
+            // 
+            this.SumInOneMonth.DataPropertyName = "SumInOneMonth";
+            this.SumInOneMonth.HeaderText = "Aylıq";
+            this.SumInOneMonth.Name = "SumInOneMonth";
+            this.SumInOneMonth.Width = 54;
+            // 
             // cmbMarkets
             // 
             this.cmbMarkets.FormattingEnabled = true;
@@ -606,7 +612,7 @@
             this.filialYaratToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1766, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1814, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -944,7 +950,7 @@
             // lblPriceDay26
             // 
             this.lblPriceDay26.AutoSize = true;
-            this.lblPriceDay26.Location = new System.Drawing.Point(1088, 94);
+            this.lblPriceDay26.Location = new System.Drawing.Point(1088, 93);
             this.lblPriceDay26.Name = "lblPriceDay26";
             this.lblPriceDay26.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay26.TabIndex = 95;
@@ -953,7 +959,7 @@
             // lblPriceDay25
             // 
             this.lblPriceDay25.AutoSize = true;
-            this.lblPriceDay25.Location = new System.Drawing.Point(996, 94);
+            this.lblPriceDay25.Location = new System.Drawing.Point(989, 94);
             this.lblPriceDay25.Name = "lblPriceDay25";
             this.lblPriceDay25.Size = new System.Drawing.Size(47, 13);
             this.lblPriceDay25.TabIndex = 95;
@@ -1872,22 +1878,11 @@
             this.lblTotalAmount.Size = new System.Drawing.Size(0, 24);
             this.lblTotalAmount.TabIndex = 17;
             // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(1128, 39);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(47, 23);
-            this.btnPrint.TabIndex = 18;
-            this.btnPrint.Text = "Çap";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            // 
             // MarketForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1766, 805);
-            this.Controls.Add(this.btnPrint);
+            this.ClientSize = new System.Drawing.Size(1814, 805);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.grbEdit);
@@ -1976,43 +1971,6 @@
         private System.Windows.Forms.ComboBox cmbMonthForCreateMonth;
         private System.Windows.Forms.Button btnShowNewMonthGrid;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MarketI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MonthName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PriceOFOne;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.DataGridView dgvMarketList;
         private System.Windows.Forms.GroupBox grbEdit;
         private System.Windows.Forms.NumericUpDown CUD1;
@@ -2117,7 +2075,43 @@
         private System.Windows.Forms.Label lblPriceDay19;
         private System.Windows.Forms.Label lblPriceDay18;
         private System.Windows.Forms.Label lblPriceDay30;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MarketI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MonthName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceOFOne;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SumInOneMonth;
     }
 }

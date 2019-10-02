@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace breadCompany
     {
         Users activeUser;
         int selectedRowId;
+        const string folderForEroor = "seeAllError";
+        string pathTxt = Path.Combine(folderForEroor, "error.txt");
         private readonly GanjaBreadCompanyEntity db;
         public CreateMarket(Users User)
         {
@@ -23,10 +26,11 @@ namespace breadCompany
                 db = new GanjaBreadCompanyEntity();
                 activeUser = User;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
             InitializeComponent();
         }
@@ -58,9 +62,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
 
@@ -74,9 +77,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
 
 
@@ -85,11 +87,20 @@ namespace breadCompany
         void dgvMarket(Users user)
         {
 
-            dgvMarketListInCreate.DataSource = db.MarketList.Where(w => w.DeletedDate == null && w.UserId == user.Id).Select(s=> new {
+            try
+            {
+                dgvMarketListInCreate.DataSource = db.MarketList.Where(w => w.DeletedDate == null && w.UserId == user.Id).Select(s => new {
 
-                s.Id,
-                s.MarketName,
-            }).ToList();
+                    s.Id,
+                    s.MarketName,
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
+            }
         }
         private void dgvMarketListInCreate_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -104,9 +115,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
 
@@ -130,9 +140,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
 
@@ -152,9 +161,8 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Message: " + ex);
-
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
 

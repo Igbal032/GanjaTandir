@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,30 +14,51 @@ namespace breadCompany
 {
     public partial class LoginForm : Form
     {
+        const string folder = "img";
+        const string folderForEroor = "seeAllError";
         private readonly GanjaBreadCompanyEntity db;
+        string pathTxt = Path.Combine(folderForEroor, "error.txt");
+
         public LoginForm()
         {
-            db = new GanjaBreadCompanyEntity();
+
+            try
+            {
+                db = new GanjaBreadCompanyEntity();
+                Directory.CreateDirectory(folder);
+                Directory.CreateDirectory(folderForEroor);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
+            }
             InitializeComponent();
+
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            var checkUserCount = db.Users.Where(w => w.DeletedDate == null).Count();
-            if (checkUserCount >= 3)
+            try
             {
-                linkRegister.Visible = false;
+                var checkUserCount = db.Users.Where(w => w.DeletedDate == null).Count();
+                if (checkUserCount >= 3)
+                {
+                    linkRegister.Visible = false;
+                }
+
+                int daysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
 
-            int daysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
-
 
         }
 
-        private void grpUP_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void linkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -51,21 +73,21 @@ namespace breadCompany
             var password = txtUserPassword.Text.Trim();
             try
             {
-                if (string.IsNullOrWhiteSpace(email)||string.IsNullOrWhiteSpace(password))
+                if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
                 {
                     MessageBox.Show("Zəhmət olmasa bütün xanaları doldurun!!");
                 }
                 else
                 {
                     var checkUser = db.Users.Where(a => a.DeletedDate == null && a.UserEmail == email).FirstOrDefault();
-                    if (checkUser==null)
+                    if (checkUser == null)
                     {
                         MessageBox.Show("Bu istifadəçi Mövcut Deyil!!");
                     }
                     else
                     {
                         //var checkPassword = Extention.Extention.CheckPassword(password,checkUser.UserPassword);
-                        if (checkUser.UserPassword!=password/*checkPassword==false*/)
+                        if (checkUser.UserPassword != password/*checkPassword==false*/)
                         {
                             MessageBox.Show("Zəhmət olmasa şifrəni düzgün daxil edin!!");
                         }
@@ -79,10 +101,11 @@ namespace breadCompany
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
 
@@ -90,12 +113,21 @@ namespace breadCompany
         {
             ForgotPassword forgotPass = new ForgotPassword();
             forgotPass.Show();
-            
+
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Please, check again after some minutes!! ");
+                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
+            }
         }
     }
 }

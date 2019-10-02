@@ -78,7 +78,6 @@
             this.grpUP.Size = new System.Drawing.Size(275, 131);
             this.grpUP.TabIndex = 2;
             this.grpUP.TabStop = false;
-            this.grpUP.Enter += new System.EventHandler(this.grpUP_Enter);
             // 
             // linkForgotPassword
             // 

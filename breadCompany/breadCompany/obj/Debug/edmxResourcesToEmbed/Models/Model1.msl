@@ -45,6 +45,7 @@
           <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="SumInOneMonth" ColumnName="SumInOneMonth" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

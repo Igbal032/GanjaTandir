@@ -63,7 +63,6 @@
             this.grpRegister.Size = new System.Drawing.Size(509, 251);
             this.grpRegister.TabIndex = 0;
             this.grpRegister.TabStop = false;
-            this.grpRegister.Enter += new System.EventHandler(this.grpRegister_Enter);
             // 
             // btnSubmitRegister
             // 

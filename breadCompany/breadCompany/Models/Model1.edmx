@@ -50,6 +50,7 @@
           <Property Name="TotalPrice" Type="money" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="SumInOneMonth" Type="money" />
         </EntityType>
         <EntityType Name="MarketList">
           <Key>
@@ -225,6 +226,7 @@
           <Property Name="TotalPrice" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="SumInOneMonth" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="Months" Relationship="Self.FK_CountForDays_Months" FromRole="CountForDays" ToRole="Months" />
           <NavigationProperty Name="Subsidiary" Relationship="Self.FK_CountForDays_Subsidiary" FromRole="CountForDays" ToRole="Subsidiary" />
         </EntityType>
@@ -408,6 +410,7 @@
                 <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="SumInOneMonth" ColumnName="SumInOneMonth" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
