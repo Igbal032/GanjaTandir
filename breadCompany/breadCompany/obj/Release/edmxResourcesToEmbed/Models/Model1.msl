@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GanjaBreadCompanyModelStoreContainer" CdmEntityContainer="GanjaBreadCompanyEntity">
+    <EntitySetMapping Name="CountForDays">
+      <EntityTypeMapping TypeName="GanjaBreadCompanyModel.CountForDays">
+        <MappingFragment StoreEntitySet="CountForDays">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SubsidiaryId" ColumnName="SubsidiaryId" />
+          <ScalarProperty Name="MonthId" ColumnName="MonthId" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="MarketName" ColumnName="MarketName" />
+          <ScalarProperty Name="Day1" ColumnName="Day1" />
+          <ScalarProperty Name="Day2" ColumnName="Day2" />
+          <ScalarProperty Name="Day3" ColumnName="Day3" />
+          <ScalarProperty Name="Day4" ColumnName="Day4" />
+          <ScalarProperty Name="Day5" ColumnName="Day5" />
+          <ScalarProperty Name="Day6" ColumnName="Day6" />
+          <ScalarProperty Name="Day7" ColumnName="Day7" />
+          <ScalarProperty Name="Day8" ColumnName="Day8" />
+          <ScalarProperty Name="Day9" ColumnName="Day9" />
+          <ScalarProperty Name="Day10" ColumnName="Day10" />
+          <ScalarProperty Name="Day11" ColumnName="Day11" />
+          <ScalarProperty Name="Day12" ColumnName="Day12" />
+          <ScalarProperty Name="Day13" ColumnName="Day13" />
+          <ScalarProperty Name="Day14" ColumnName="Day14" />
+          <ScalarProperty Name="Day15" ColumnName="Day15" />
+          <ScalarProperty Name="Day16" ColumnName="Day16" />
+          <ScalarProperty Name="Day17" ColumnName="Day17" />
+          <ScalarProperty Name="Day18" ColumnName="Day18" />
+          <ScalarProperty Name="Day19" ColumnName="Day19" />
+          <ScalarProperty Name="Day20" ColumnName="Day20" />
+          <ScalarProperty Name="Day21" ColumnName="Day21" />
+          <ScalarProperty Name="Day22" ColumnName="Day22" />
+          <ScalarProperty Name="Day23" ColumnName="Day23" />
+          <ScalarProperty Name="Day24" ColumnName="Day24" />
+          <ScalarProperty Name="Day25" ColumnName="Day25" />
+          <ScalarProperty Name="Day26" ColumnName="Day26" />
+          <ScalarProperty Name="Day27" ColumnName="Day27" />
+          <ScalarProperty Name="Day28" ColumnName="Day28" />
+          <ScalarProperty Name="Day29" ColumnName="Day29" />
+          <ScalarProperty Name="Day30" ColumnName="Day30" />
+          <ScalarProperty Name="Day31" ColumnName="Day31" />
+          <ScalarProperty Name="PriceOfOne" ColumnName="PriceOfOne" />
+          <ScalarProperty Name="TotalCount" ColumnName="TotalCount" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="SumInOneMonth" ColumnName="SumInOneMonth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarketList">
+      <EntityTypeMapping TypeName="GanjaBreadCompanyModel.MarketList">
+        <MappingFragment StoreEntitySet="MarketList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MarketName" ColumnName="MarketName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Months">
+      <EntityTypeMapping TypeName="GanjaBreadCompanyModel.Months">
+        <MappingFragment StoreEntitySet="Months">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="MonthNumber" ColumnName="MonthNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Price">
+      <EntityTypeMapping TypeName="GanjaBreadCompanyModel.Price">
+        <MappingFragment StoreEntitySet="Price">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Modifieddate" ColumnName="Modifieddate" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subsidiary">
+      <EntityTypeMapping TypeName="GanjaBreadCompanyModel.Subsidiary">
+        <MappingFragment StoreEntitySet="Subsidiary">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Subsidiary1" ColumnName="Subsidiary" />
+          <ScalarProperty Name="MarketId" ColumnName="MarketId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="GanjaBreadCompanyModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserSurname" ColumnName="UserSurname" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Modifieddate" ColumnName="Modifieddate" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

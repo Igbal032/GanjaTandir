@@ -7,7 +7,6 @@ D:\Project(Main)\breadCompany\breadCompany\bin\Debug\itextsharp.dll
 D:\Project(Main)\breadCompany\breadCompany\bin\Debug\EntityFramework.xml
 D:\Project(Main)\breadCompany\breadCompany\bin\Debug\EntityFramework.SqlServer.xml
 D:\Project(Main)\breadCompany\breadCompany\bin\Debug\itextsharp.xml
-D:\Project(Main)\breadCompany\breadCompany\obj\Debug\breadCompany.csprojAssemblyReference.cache
 D:\Project(Main)\breadCompany\breadCompany\obj\Debug\breadCompany.CreateMarket.resources
 D:\Project(Main)\breadCompany\breadCompany\obj\Debug\breadCompany.CreateSubsudiary.resources
 D:\Project(Main)\breadCompany\breadCompany\obj\Debug\breadCompany.ForgotPassword.resources

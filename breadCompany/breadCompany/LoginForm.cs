@@ -21,7 +21,6 @@ namespace breadCompany
 
         public LoginForm()
         {
-
             try
             {
                 db = new GanjaBreadCompanyEntity();
@@ -42,21 +41,18 @@ namespace breadCompany
             try
             {
                 var checkUserCount = db.Users.Where(w => w.DeletedDate == null).Count();
-                if (checkUserCount >= 3)
-                {
-                    linkRegister.Visible = false;
-                }
+              if (checkUserCount >= 3)
+              {
+                  linkRegister.Visible = false;
+              }
 
-                int daysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+              int daysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Please, check again after some minutes!! ");
+                MessageBox.Show("Internet şəbəkəsi yoxdur!! ");
                 File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
-
-
         }
 
 
@@ -96,7 +92,6 @@ namespace breadCompany
                             MarketForm marketList = new MarketForm(checkUser);
                             marketList.Show();
                             this.Hide();
-
                         }
                     }
                 }
@@ -116,7 +111,8 @@ namespace breadCompany
 
         }
 
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             try
             {
@@ -124,10 +120,11 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Please, check again after some minutes!! ");
                 File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
+
             }
+            Application.Exit();
         }
     }
 }

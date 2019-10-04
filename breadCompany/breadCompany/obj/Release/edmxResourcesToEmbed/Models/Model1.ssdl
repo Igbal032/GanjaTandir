@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GanjaBreadCompanyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CountForDays">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubsidiaryId" Type="int" Nullable="false" />
+    <Property Name="MonthId" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" />
+    <Property Name="MarketName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Day1" Type="int" />
+    <Property Name="Day2" Type="int" />
+    <Property Name="Day3" Type="int" />
+    <Property Name="Day4" Type="int" />
+    <Property Name="Day5" Type="int" />
+    <Property Name="Day6" Type="int" />
+    <Property Name="Day7" Type="int" />
+    <Property Name="Day8" Type="int" />
+    <Property Name="Day9" Type="int" />
+    <Property Name="Day10" Type="int" />
+    <Property Name="Day11" Type="int" />
+    <Property Name="Day12" Type="int" />
+    <Property Name="Day13" Type="int" />
+    <Property Name="Day14" Type="int" />
+    <Property Name="Day15" Type="int" />
+    <Property Name="Day16" Type="int" />
+    <Property Name="Day17" Type="int" />
+    <Property Name="Day18" Type="int" />
+    <Property Name="Day19" Type="int" />
+    <Property Name="Day20" Type="int" />
+    <Property Name="Day21" Type="int" />
+    <Property Name="Day22" Type="int" />
+    <Property Name="Day23" Type="int" />
+    <Property Name="Day24" Type="int" />
+    <Property Name="Day25" Type="int" />
+    <Property Name="Day26" Type="int" />
+    <Property Name="Day27" Type="int" />
+    <Property Name="Day28" Type="int" />
+    <Property Name="Day29" Type="int" />
+    <Property Name="Day30" Type="int" />
+    <Property Name="Day31" Type="int" />
+    <Property Name="PriceOfOne" Type="float" />
+    <Property Name="TotalCount" Type="int" />
+    <Property Name="TotalPrice" Type="money" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="SumInOneMonth" Type="money" />
+  </EntityType>
+  <EntityType Name="MarketList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarketName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Months">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MonthName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MonthNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Price">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Modifieddate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Subsidiary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Subsidiary" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MarketId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserSurname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Modifieddate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_CountForDays_Months">
+    <End Role="Months" Type="Self.Months" Multiplicity="1" />
+    <End Role="CountForDays" Type="Self.CountForDays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Months">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CountForDays">
+        <PropertyRef Name="MonthId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountForDays_Subsidiary">
+    <End Role="Subsidiary" Type="Self.Subsidiary" Multiplicity="1" />
+    <End Role="CountForDays" Type="Self.CountForDays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subsidiary">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CountForDays">
+        <PropertyRef Name="SubsidiaryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MarketList_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="MarketList" Type="Self.MarketList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MarketList">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subsidiary_MarketList">
+    <End Role="MarketList" Type="Self.MarketList" Multiplicity="1" />
+    <End Role="Subsidiary" Type="Self.Subsidiary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarketList">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subsidiary">
+        <PropertyRef Name="MarketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GanjaBreadCompanyModelStoreContainer">
+    <EntitySet Name="CountForDays" EntityType="Self.CountForDays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MarketList" EntityType="Self.MarketList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Months" EntityType="Self.Months" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Price" EntityType="Self.Price" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subsidiary" EntityType="Self.Subsidiary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CountForDays_Months" Association="Self.FK_CountForDays_Months">
+      <End Role="Months" EntitySet="Months" />
+      <End Role="CountForDays" EntitySet="CountForDays" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountForDays_Subsidiary" Association="Self.FK_CountForDays_Subsidiary">
+      <End Role="Subsidiary" EntitySet="Subsidiary" />
+      <End Role="CountForDays" EntitySet="CountForDays" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MarketList_Users" Association="Self.FK_MarketList_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MarketList" EntitySet="MarketList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subsidiary_MarketList" Association="Self.FK_Subsidiary_MarketList">
+      <End Role="MarketList" EntitySet="MarketList" />
+      <End Role="Subsidiary" EntitySet="Subsidiary" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
