@@ -28,45 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarketForm));
             this.dgvMarketList = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MarketI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MonthName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceOFOne = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SumInOneMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbMarkets = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnShowMarkets = new System.Windows.Forms.Button();
@@ -190,6 +153,45 @@
             this.CUD1 = new System.Windows.Forms.NumericUpDown();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MarketI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MonthName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceOFOne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarketList)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.grpShowDays.SuspendLayout();
@@ -233,8 +235,10 @@
             // 
             this.dgvMarketList.AllowUserToAddRows = false;
             this.dgvMarketList.AllowUserToDeleteRows = false;
-            this.dgvMarketList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvMarketList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarketList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvMarketList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvMarketList.ColumnHeadersHeight = 25;
+            this.dgvMarketList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMarketList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.MarketI,
@@ -270,281 +274,18 @@
             this.Day30,
             this.Day31,
             this.MonthName,
-            this.PriceOFOne,
             this.TotalCount,
-            this.TotalPrice,
-            this.SumInOneMonth});
-            this.dgvMarketList.Location = new System.Drawing.Point(0, 378);
+            this.PriceOFOne,
+            this.TotalPrice});
+            this.dgvMarketList.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvMarketList.Location = new System.Drawing.Point(0, 397);
+            this.dgvMarketList.MultiSelect = false;
             this.dgvMarketList.Name = "dgvMarketList";
-            this.dgvMarketList.Size = new System.Drawing.Size(1766, 408);
+            this.dgvMarketList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvMarketList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMarketList.Size = new System.Drawing.Size(1795, 408);
             this.dgvMarketList.TabIndex = 0;
             this.dgvMarketList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMarketList_RowHeaderMouseClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "№";
-            this.ID.Name = "ID";
-            this.ID.Width = 43;
-            // 
-            // MarketI
-            // 
-            this.MarketI.DataPropertyName = "MarketName";
-            this.MarketI.HeaderText = "Market Ad";
-            this.MarketI.Name = "MarketI";
-            this.MarketI.Width = 81;
-            // 
-            // Day1
-            // 
-            this.Day1.DataPropertyName = "Day1";
-            this.Day1.HeaderText = "1";
-            this.Day1.Name = "Day1";
-            this.Day1.Width = 38;
-            // 
-            // Day2
-            // 
-            this.Day2.DataPropertyName = "Day2";
-            this.Day2.HeaderText = "2";
-            this.Day2.Name = "Day2";
-            this.Day2.Width = 38;
-            // 
-            // Day3
-            // 
-            this.Day3.DataPropertyName = "Day3";
-            this.Day3.HeaderText = "3";
-            this.Day3.Name = "Day3";
-            this.Day3.Width = 38;
-            // 
-            // Day4
-            // 
-            this.Day4.DataPropertyName = "Day4";
-            this.Day4.HeaderText = "4";
-            this.Day4.Name = "Day4";
-            this.Day4.Width = 38;
-            // 
-            // Day5
-            // 
-            this.Day5.DataPropertyName = "Day5";
-            this.Day5.HeaderText = "5";
-            this.Day5.Name = "Day5";
-            this.Day5.Width = 38;
-            // 
-            // Day6
-            // 
-            this.Day6.DataPropertyName = "Day6";
-            this.Day6.HeaderText = "6";
-            this.Day6.Name = "Day6";
-            this.Day6.Width = 38;
-            // 
-            // Day7
-            // 
-            this.Day7.DataPropertyName = "Day7";
-            this.Day7.HeaderText = "7";
-            this.Day7.Name = "Day7";
-            this.Day7.Width = 38;
-            // 
-            // Day8
-            // 
-            this.Day8.DataPropertyName = "Day8";
-            this.Day8.HeaderText = "8";
-            this.Day8.Name = "Day8";
-            this.Day8.Width = 38;
-            // 
-            // Day9
-            // 
-            this.Day9.DataPropertyName = "Day9";
-            this.Day9.HeaderText = "9";
-            this.Day9.Name = "Day9";
-            this.Day9.Width = 38;
-            // 
-            // Day10
-            // 
-            this.Day10.DataPropertyName = "Day10";
-            this.Day10.HeaderText = "10";
-            this.Day10.Name = "Day10";
-            this.Day10.Width = 44;
-            // 
-            // Day11
-            // 
-            this.Day11.DataPropertyName = "Day11";
-            this.Day11.HeaderText = "11";
-            this.Day11.Name = "Day11";
-            this.Day11.Width = 44;
-            // 
-            // Day12
-            // 
-            this.Day12.DataPropertyName = "Day12";
-            this.Day12.HeaderText = "12";
-            this.Day12.Name = "Day12";
-            this.Day12.Width = 44;
-            // 
-            // Day13
-            // 
-            this.Day13.DataPropertyName = "Day13";
-            this.Day13.HeaderText = "13";
-            this.Day13.Name = "Day13";
-            this.Day13.Width = 44;
-            // 
-            // Day14
-            // 
-            this.Day14.DataPropertyName = "Day14";
-            this.Day14.HeaderText = "14";
-            this.Day14.Name = "Day14";
-            this.Day14.Width = 44;
-            // 
-            // Day15
-            // 
-            this.Day15.DataPropertyName = "Day15";
-            this.Day15.HeaderText = "15";
-            this.Day15.Name = "Day15";
-            this.Day15.Width = 44;
-            // 
-            // Day16
-            // 
-            this.Day16.DataPropertyName = "Day16";
-            this.Day16.HeaderText = "16";
-            this.Day16.Name = "Day16";
-            this.Day16.Width = 44;
-            // 
-            // Day17
-            // 
-            this.Day17.DataPropertyName = "Day17";
-            this.Day17.HeaderText = "17";
-            this.Day17.Name = "Day17";
-            this.Day17.Width = 44;
-            // 
-            // Day18
-            // 
-            this.Day18.DataPropertyName = "Day18";
-            this.Day18.HeaderText = "18";
-            this.Day18.Name = "Day18";
-            this.Day18.Width = 44;
-            // 
-            // Day19
-            // 
-            this.Day19.DataPropertyName = "Day19";
-            this.Day19.HeaderText = "19";
-            this.Day19.Name = "Day19";
-            this.Day19.Width = 44;
-            // 
-            // Day20
-            // 
-            this.Day20.DataPropertyName = "Day20";
-            this.Day20.HeaderText = "20";
-            this.Day20.Name = "Day20";
-            this.Day20.Width = 44;
-            // 
-            // Day21
-            // 
-            this.Day21.DataPropertyName = "Day21";
-            this.Day21.HeaderText = "21";
-            this.Day21.Name = "Day21";
-            this.Day21.Width = 44;
-            // 
-            // Day22
-            // 
-            this.Day22.DataPropertyName = "Day22";
-            this.Day22.HeaderText = "22";
-            this.Day22.Name = "Day22";
-            this.Day22.Width = 44;
-            // 
-            // Day23
-            // 
-            this.Day23.DataPropertyName = "Day23";
-            this.Day23.HeaderText = "23";
-            this.Day23.Name = "Day23";
-            this.Day23.Width = 44;
-            // 
-            // Day24
-            // 
-            this.Day24.DataPropertyName = "Day24";
-            this.Day24.HeaderText = "24";
-            this.Day24.Name = "Day24";
-            this.Day24.Width = 44;
-            // 
-            // Day25
-            // 
-            this.Day25.DataPropertyName = "Day25";
-            this.Day25.HeaderText = "25";
-            this.Day25.Name = "Day25";
-            this.Day25.Width = 44;
-            // 
-            // Day26
-            // 
-            this.Day26.DataPropertyName = "Day26";
-            this.Day26.HeaderText = "26";
-            this.Day26.Name = "Day26";
-            this.Day26.Width = 44;
-            // 
-            // Day27
-            // 
-            this.Day27.DataPropertyName = "Day27";
-            this.Day27.HeaderText = "27";
-            this.Day27.Name = "Day27";
-            this.Day27.Width = 44;
-            // 
-            // Day28
-            // 
-            this.Day28.DataPropertyName = "Day28";
-            this.Day28.HeaderText = "28";
-            this.Day28.Name = "Day28";
-            this.Day28.Width = 44;
-            // 
-            // Day29
-            // 
-            this.Day29.DataPropertyName = "Day29";
-            this.Day29.HeaderText = "29";
-            this.Day29.Name = "Day29";
-            this.Day29.Width = 44;
-            // 
-            // Day30
-            // 
-            this.Day30.DataPropertyName = "Day30";
-            this.Day30.HeaderText = "30";
-            this.Day30.Name = "Day30";
-            this.Day30.Width = 44;
-            // 
-            // Day31
-            // 
-            this.Day31.DataPropertyName = "Day31";
-            this.Day31.HeaderText = "31";
-            this.Day31.Name = "Day31";
-            this.Day31.Width = 44;
-            // 
-            // MonthName
-            // 
-            this.MonthName.DataPropertyName = "MonthName";
-            this.MonthName.HeaderText = "Ay";
-            this.MonthName.Name = "MonthName";
-            this.MonthName.Width = 44;
-            // 
-            // PriceOFOne
-            // 
-            this.PriceOFOne.DataPropertyName = "PriceOFOne";
-            this.PriceOFOne.HeaderText = "Qiymət";
-            this.PriceOFOne.Name = "PriceOFOne";
-            this.PriceOFOne.Width = 64;
-            // 
-            // TotalCount
-            // 
-            this.TotalCount.DataPropertyName = "TotalCount";
-            this.TotalCount.HeaderText = "Cəm Say";
-            this.TotalCount.Name = "TotalCount";
-            this.TotalCount.Width = 74;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.DataPropertyName = "TotalPrice";
-            this.TotalPrice.HeaderText = "Sum";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.Width = 53;
-            // 
-            // SumInOneMonth
-            // 
-            this.SumInOneMonth.DataPropertyName = "SumInOneMonth";
-            this.SumInOneMonth.HeaderText = "Aylıq";
-            this.SumInOneMonth.Name = "SumInOneMonth";
-            this.SumInOneMonth.Width = 54;
             // 
             // cmbMarkets
             // 
@@ -612,7 +353,7 @@
             this.filialYaratToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1814, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1795, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -634,7 +375,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1378, 47);
+            this.label3.Location = new System.Drawing.Point(1367, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 16);
             this.label3.TabIndex = 9;
@@ -654,7 +395,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(1606, 47);
+            this.linkLabel1.Location = new System.Drawing.Point(1572, 47);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(105, 16);
             this.linkLabel1.TabIndex = 11;
@@ -1202,7 +943,7 @@
             // 
             this.CUD15.Location = new System.Drawing.Point(1487, 37);
             this.CUD15.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1234,7 +975,7 @@
             // 
             this.CUD31.Location = new System.Drawing.Point(1549, 87);
             this.CUD31.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1255,7 +996,7 @@
             // 
             this.CUD30.Location = new System.Drawing.Point(1449, 87);
             this.CUD30.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1276,7 +1017,7 @@
             // 
             this.CUD29.Location = new System.Drawing.Point(1344, 87);
             this.CUD29.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1297,7 +1038,7 @@
             // 
             this.CUD28.Location = new System.Drawing.Point(1246, 87);
             this.CUD28.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1318,7 +1059,7 @@
             // 
             this.CUD27.Location = new System.Drawing.Point(1146, 87);
             this.CUD27.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1339,7 +1080,7 @@
             // 
             this.CUD26.Location = new System.Drawing.Point(1042, 87);
             this.CUD26.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1360,7 +1101,7 @@
             // 
             this.CUD25.Location = new System.Drawing.Point(945, 87);
             this.CUD25.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1381,7 +1122,7 @@
             // 
             this.CUD24.Location = new System.Drawing.Point(840, 87);
             this.CUD24.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1402,7 +1143,7 @@
             // 
             this.CUD23.Location = new System.Drawing.Point(740, 87);
             this.CUD23.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1423,7 +1164,7 @@
             // 
             this.CUD22.Location = new System.Drawing.Point(639, 87);
             this.CUD22.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1444,7 +1185,7 @@
             // 
             this.CUD21.Location = new System.Drawing.Point(522, 87);
             this.CUD21.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1465,7 +1206,7 @@
             // 
             this.CUD20.Location = new System.Drawing.Point(417, 87);
             this.CUD20.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1486,7 +1227,7 @@
             // 
             this.CUD19.Location = new System.Drawing.Point(314, 87);
             this.CUD19.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1507,7 +1248,7 @@
             // 
             this.CUD18.Location = new System.Drawing.Point(212, 87);
             this.CUD18.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1528,7 +1269,7 @@
             // 
             this.CUD17.Location = new System.Drawing.Point(112, 87);
             this.CUD17.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1549,7 +1290,7 @@
             // 
             this.CUD16.Location = new System.Drawing.Point(9, 87);
             this.CUD16.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1570,7 +1311,7 @@
             // 
             this.CUD14.Location = new System.Drawing.Point(1380, 37);
             this.CUD14.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1591,7 +1332,7 @@
             // 
             this.CUD13.Location = new System.Drawing.Point(1275, 37);
             this.CUD13.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1612,7 +1353,7 @@
             // 
             this.CUD12.Location = new System.Drawing.Point(1170, 37);
             this.CUD12.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1633,7 +1374,7 @@
             // 
             this.CUD11.Location = new System.Drawing.Point(1070, 37);
             this.CUD11.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1654,7 +1395,7 @@
             // 
             this.CUD10.Location = new System.Drawing.Point(966, 37);
             this.CUD10.Maximum = new decimal(new int[] {
-            500,
+            800,
             0,
             0,
             0});
@@ -1680,7 +1421,7 @@
             // 
             this.CUD9.Location = new System.Drawing.Point(869, 37);
             this.CUD9.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1701,7 +1442,7 @@
             // 
             this.CUD8.Location = new System.Drawing.Point(764, 37);
             this.CUD8.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1722,7 +1463,7 @@
             // 
             this.CUD7.Location = new System.Drawing.Point(664, 37);
             this.CUD7.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1743,7 +1484,7 @@
             // 
             this.CUD6.Location = new System.Drawing.Point(563, 37);
             this.CUD6.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1764,7 +1505,7 @@
             // 
             this.CUD5.Location = new System.Drawing.Point(458, 37);
             this.CUD5.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1785,7 +1526,7 @@
             // 
             this.CUD4.Location = new System.Drawing.Point(353, 37);
             this.CUD4.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1806,7 +1547,7 @@
             // 
             this.CUD3.Location = new System.Drawing.Point(250, 37);
             this.CUD3.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1827,7 +1568,7 @@
             // 
             this.CUD2.Location = new System.Drawing.Point(148, 37);
             this.CUD2.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1848,7 +1589,7 @@
             // 
             this.CUD1.Location = new System.Drawing.Point(45, 37);
             this.CUD1.Maximum = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -1875,14 +1616,326 @@
             this.lblTotalAmount.ForeColor = System.Drawing.Color.Red;
             this.lblTotalAmount.Location = new System.Drawing.Point(1634, 213);
             this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new System.Drawing.Size(0, 24);
+            this.lblTotalAmount.Size = new System.Drawing.Size(69, 24);
             this.lblTotalAmount.TabIndex = 17;
+            this.lblTotalAmount.Text = "0 AZN";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(1701, 40);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.TabIndex = 18;
+            this.btnPrint.Text = "Excel";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.FillWeight = 97.98307F;
+            this.ID.HeaderText = "№";
+            this.ID.Name = "ID";
+            this.ID.Width = 43;
+            // 
+            // MarketI
+            // 
+            this.MarketI.DataPropertyName = "MarketName";
+            this.MarketI.FillWeight = 93.8957F;
+            this.MarketI.HeaderText = "Market Ad";
+            this.MarketI.Name = "MarketI";
+            this.MarketI.Width = 130;
+            // 
+            // Day1
+            // 
+            this.Day1.DataPropertyName = "Day1";
+            this.Day1.FillWeight = 96.44839F;
+            this.Day1.HeaderText = "1";
+            this.Day1.Name = "Day1";
+            this.Day1.Width = 38;
+            // 
+            // Day2
+            // 
+            this.Day2.DataPropertyName = "Day2";
+            this.Day2.FillWeight = 94.84156F;
+            this.Day2.HeaderText = "2";
+            this.Day2.Name = "Day2";
+            this.Day2.Width = 38;
+            // 
+            // Day3
+            // 
+            this.Day3.DataPropertyName = "Day3";
+            this.Day3.FillWeight = 97.41601F;
+            this.Day3.HeaderText = "3";
+            this.Day3.Name = "Day3";
+            this.Day3.Width = 38;
+            // 
+            // Day4
+            // 
+            this.Day4.DataPropertyName = "Day4";
+            this.Day4.FillWeight = 95.78976F;
+            this.Day4.HeaderText = "4";
+            this.Day4.Name = "Day4";
+            this.Day4.Width = 38;
+            // 
+            // Day5
+            // 
+            this.Day5.DataPropertyName = "Day5";
+            this.Day5.FillWeight = 98.38715F;
+            this.Day5.HeaderText = "5";
+            this.Day5.Name = "Day5";
+            this.Day5.Width = 38;
+            // 
+            // Day6
+            // 
+            this.Day6.DataPropertyName = "Day6";
+            this.Day6.FillWeight = 98.90466F;
+            this.Day6.HeaderText = "6";
+            this.Day6.Name = "Day6";
+            this.Day6.Width = 38;
+            // 
+            // Day7
+            // 
+            this.Day7.DataPropertyName = "Day7";
+            this.Day7.FillWeight = 97.25146F;
+            this.Day7.HeaderText = "7";
+            this.Day7.Name = "Day7";
+            this.Day7.Width = 38;
+            // 
+            // Day8
+            // 
+            this.Day8.DataPropertyName = "Day8";
+            this.Day8.FillWeight = 99.88735F;
+            this.Day8.HeaderText = "8";
+            this.Day8.Name = "Day8";
+            this.Day8.Width = 38;
+            // 
+            // Day9
+            // 
+            this.Day9.DataPropertyName = "Day9";
+            this.Day9.FillWeight = 98.21745F;
+            this.Day9.HeaderText = "9";
+            this.Day9.Name = "Day9";
+            this.Day9.Width = 38;
+            // 
+            // Day10
+            // 
+            this.Day10.DataPropertyName = "Day10";
+            this.Day10.FillWeight = 100.5187F;
+            this.Day10.HeaderText = "10";
+            this.Day10.Name = "Day10";
+            this.Day10.Width = 44;
+            // 
+            // Day11
+            // 
+            this.Day11.DataPropertyName = "Day11";
+            this.Day11.FillWeight = 98.48526F;
+            this.Day11.HeaderText = "11";
+            this.Day11.Name = "Day11";
+            this.Day11.Width = 44;
+            // 
+            // Day12
+            // 
+            this.Day12.DataPropertyName = "Day12";
+            this.Day12.FillWeight = 100.7937F;
+            this.Day12.HeaderText = "12";
+            this.Day12.Name = "Day12";
+            this.Day12.Width = 44;
+            // 
+            // Day13
+            // 
+            this.Day13.DataPropertyName = "Day13";
+            this.Day13.FillWeight = 100.9628F;
+            this.Day13.HeaderText = "13";
+            this.Day13.Name = "Day13";
+            this.Day13.Width = 44;
+            // 
+            // Day14
+            // 
+            this.Day14.DataPropertyName = "Day14";
+            this.Day14.FillWeight = 98.92291F;
+            this.Day14.HeaderText = "14";
+            this.Day14.Name = "Day14";
+            this.Day14.Width = 44;
+            // 
+            // Day15
+            // 
+            this.Day15.DataPropertyName = "Day15";
+            this.Day15.FillWeight = 101.2445F;
+            this.Day15.HeaderText = "15";
+            this.Day15.Name = "Day15";
+            this.Day15.Width = 44;
+            // 
+            // Day16
+            // 
+            this.Day16.DataPropertyName = "Day16";
+            this.Day16.FillWeight = 99.20061F;
+            this.Day16.HeaderText = "16";
+            this.Day16.Name = "Day16";
+            this.Day16.Width = 44;
+            // 
+            // Day17
+            // 
+            this.Day17.DataPropertyName = "Day17";
+            this.Day17.FillWeight = 101.5307F;
+            this.Day17.HeaderText = "17";
+            this.Day17.Name = "Day17";
+            this.Day17.Width = 44;
+            // 
+            // Day18
+            // 
+            this.Day18.DataPropertyName = "Day18";
+            this.Day18.FillWeight = 99.48306F;
+            this.Day18.HeaderText = "18";
+            this.Day18.Name = "Day18";
+            this.Day18.Width = 44;
+            // 
+            // Day19
+            // 
+            this.Day19.DataPropertyName = "Day19";
+            this.Day19.FillWeight = 101.8221F;
+            this.Day19.HeaderText = "19";
+            this.Day19.Name = "Day19";
+            this.Day19.Width = 44;
+            // 
+            // Day20
+            // 
+            this.Day20.DataPropertyName = "Day20";
+            this.Day20.FillWeight = 99.77105F;
+            this.Day20.HeaderText = "20";
+            this.Day20.Name = "Day20";
+            this.Day20.Width = 44;
+            // 
+            // Day21
+            // 
+            this.Day21.DataPropertyName = "Day21";
+            this.Day21.FillWeight = 102.1196F;
+            this.Day21.HeaderText = "21";
+            this.Day21.Name = "Day21";
+            this.Day21.Width = 44;
+            // 
+            // Day22
+            // 
+            this.Day22.DataPropertyName = "Day22";
+            this.Day22.FillWeight = 102.3018F;
+            this.Day22.HeaderText = "22";
+            this.Day22.Name = "Day22";
+            this.Day22.Width = 44;
+            // 
+            // Day23
+            // 
+            this.Day23.DataPropertyName = "Day23";
+            this.Day23.FillWeight = 100.2463F;
+            this.Day23.HeaderText = "23";
+            this.Day23.Name = "Day23";
+            this.Day23.Width = 44;
+            // 
+            // Day24
+            // 
+            this.Day24.DataPropertyName = "Day24";
+            this.Day24.FillWeight = 102.6118F;
+            this.Day24.HeaderText = "24";
+            this.Day24.Name = "Day24";
+            this.Day24.Width = 44;
+            // 
+            // Day25
+            // 
+            this.Day25.DataPropertyName = "Day25";
+            this.Day25.FillWeight = 100.5537F;
+            this.Day25.HeaderText = "25";
+            this.Day25.Name = "Day25";
+            this.Day25.Width = 44;
+            // 
+            // Day26
+            // 
+            this.Day26.DataPropertyName = "Day26";
+            this.Day26.FillWeight = 102.9302F;
+            this.Day26.HeaderText = "26";
+            this.Day26.Name = "Day26";
+            this.Day26.Width = 44;
+            // 
+            // Day27
+            // 
+            this.Day27.DataPropertyName = "Day27";
+            this.Day27.FillWeight = 100.8697F;
+            this.Day27.HeaderText = "27";
+            this.Day27.Name = "Day27";
+            this.Day27.Width = 44;
+            // 
+            // Day28
+            // 
+            this.Day28.DataPropertyName = "Day28";
+            this.Day28.FillWeight = 103.2579F;
+            this.Day28.HeaderText = "28";
+            this.Day28.Name = "Day28";
+            this.Day28.Width = 44;
+            // 
+            // Day29
+            // 
+            this.Day29.DataPropertyName = "Day29";
+            this.Day29.FillWeight = 103.4568F;
+            this.Day29.HeaderText = "29";
+            this.Day29.Name = "Day29";
+            this.Day29.Width = 44;
+            // 
+            // Day30
+            // 
+            this.Day30.DataPropertyName = "Day30";
+            this.Day30.FillWeight = 101.3933F;
+            this.Day30.HeaderText = "30";
+            this.Day30.Name = "Day30";
+            this.Day30.Width = 44;
+            // 
+            // Day31
+            // 
+            this.Day31.DataPropertyName = "Day31";
+            this.Day31.FillWeight = 103.8021F;
+            this.Day31.HeaderText = "31";
+            this.Day31.Name = "Day31";
+            this.Day31.Width = 44;
+            // 
+            // MonthName
+            // 
+            this.MonthName.DataPropertyName = "MonthName";
+            this.MonthName.FillWeight = 101.7368F;
+            this.MonthName.HeaderText = "Ay";
+            this.MonthName.Name = "MonthName";
+            this.MonthName.Width = 44;
+            // 
+            // TotalCount
+            // 
+            this.TotalCount.DataPropertyName = "TotalCount";
+            this.TotalCount.FillWeight = 102.93F;
+            this.TotalCount.HeaderText = "Cəm Say";
+            this.TotalCount.Name = "TotalCount";
+            this.TotalCount.Width = 64;
+            // 
+            // PriceOFOne
+            // 
+            this.PriceOFOne.DataPropertyName = "PriceOFOne";
+            this.PriceOFOne.FillWeight = 99.10332F;
+            this.PriceOFOne.HeaderText = "Qiymət";
+            this.PriceOFOne.Name = "PriceOFOne";
+            this.PriceOFOne.Width = 74;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.DataPropertyName = "TotalPrice";
+            this.TotalPrice.FillWeight = 100.9286F;
+            this.TotalPrice.HeaderText = "Ümumi";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.Width = 85;
             // 
             // MarketForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1814, 805);
+            this.ClientSize = new System.Drawing.Size(1795, 805);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.grbEdit);
@@ -1894,11 +1947,10 @@
             this.Controls.Add(this.lblActiveUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MarketForm";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Market";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MarketForm_FormClosing);
@@ -2075,6 +2127,8 @@
         private System.Windows.Forms.Label lblPriceDay19;
         private System.Windows.Forms.Label lblPriceDay18;
         private System.Windows.Forms.Label lblPriceDay30;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MarketI;
         private System.Windows.Forms.DataGridViewTextBoxColumn Day1;
@@ -2109,9 +2163,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Day30;
         private System.Windows.Forms.DataGridViewTextBoxColumn Day31;
         private System.Windows.Forms.DataGridViewTextBoxColumn MonthName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PriceOFOne;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceOFOne;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SumInOneMonth;
     }
 }

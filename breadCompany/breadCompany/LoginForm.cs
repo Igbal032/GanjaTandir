@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using breadCompany.Models;
+using System;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using breadCompany.Models;
 
 namespace breadCompany
 {
@@ -41,7 +36,8 @@ namespace breadCompany
             try
             {
                 var checkUserCount = db.Users.Where(w => w.DeletedDate == null).Count();
-              if (checkUserCount >= 3)
+                //adding user
+              if (checkUserCount > 0)
               {
                   linkRegister.Visible = false;
               }
@@ -98,7 +94,6 @@ namespace breadCompany
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Please, check again after some minutes!! ");
                 File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
@@ -108,7 +103,6 @@ namespace breadCompany
         {
             ForgotPassword forgotPass = new ForgotPassword();
             forgotPass.Show();
-
         }
 
 
@@ -116,7 +110,18 @@ namespace breadCompany
         {
             try
             {
-                Application.Exit();
+                DialogResult dialog = new DialogResult();
+
+                dialog = MessageBox.Show("Tətbiqdən çıxmağa əmminsiz?", "Xəbərdarlıq!", MessageBoxButtons.YesNo);
+
+                if (dialog == DialogResult.Yes)
+                {
+                    System.Environment.Exit(1);
+                }
+                else {
+                    LoginForm lg = new LoginForm();
+                    lg.Show();
+                }
             }
             catch (Exception ex)
             {
@@ -124,7 +129,8 @@ namespace breadCompany
                 File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
 
             }
-            Application.Exit();
+
         }
+        
     }
 }

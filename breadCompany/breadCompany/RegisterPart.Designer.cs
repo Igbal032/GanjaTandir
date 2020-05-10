@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterPart));
             this.grpRegister = new System.Windows.Forms.GroupBox();
             this.btnSubmitRegister = new System.Windows.Forms.Button();
             this.txtConPassword = new System.Windows.Forms.TextBox();
@@ -66,7 +67,7 @@
             // 
             // btnSubmitRegister
             // 
-            this.btnSubmitRegister.Location = new System.Drawing.Point(371, 208);
+            this.btnSubmitRegister.Location = new System.Drawing.Point(379, 208);
             this.btnSubmitRegister.Name = "btnSubmitRegister";
             this.btnSubmitRegister.Size = new System.Drawing.Size(101, 27);
             this.btnSubmitRegister.TabIndex = 10;
@@ -197,8 +198,8 @@
             this.Controls.Add(this.grpRegister);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterPart";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Qeydiyyat";
             this.grpRegister.ResumeLayout(false);

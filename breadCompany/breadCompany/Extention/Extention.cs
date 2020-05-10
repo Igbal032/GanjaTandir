@@ -25,8 +25,5 @@ namespace breadCompany.Extention
         {
             return HashPassword(password) == hashedpassword;
         }
-
-
-
     }
 }

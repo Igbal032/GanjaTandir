@@ -2,9 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using iTextSharp.text;
 
+using iTextSharp.text.pdf;
+
+using iTextSharp.text.html;
+using ClosedXML.Excel;
 
 namespace breadCompany
 {
@@ -45,7 +51,6 @@ namespace breadCompany
             }
             try
             {
-
                 cmbMarkets.DataSource = db.MarketList.Where(w => w.DeletedDate == null && w.UserId == activeUser.Id && w.Users.DeletedDate == null).Select(s => new ComboItem
                 {
 
@@ -84,20 +89,27 @@ namespace breadCompany
         {
             try
             {
-                var marketList = db.MarketList.Where(w => w.DeletedDate == null && w.UserId == activeUser.Id && w.Users.DeletedDate == null).ToList();
-                if (marketList == null)
+
+                ComboItem selectedMarket = cmbMarkets.SelectedItem as ComboItem;
+                ComboItem selectedMonth = cmbMonth.SelectedItem as ComboItem;
+                if (selectedMarket==null)
                 {
                     MessageBox.Show("Zəhmət olmasa market elavə edin!!");
                     return;
                 }
-                ComboItem selectedMarket = cmbMarkets.SelectedItem as ComboItem;
-                ComboItem selectedMonth = cmbMonth.SelectedItem as ComboItem;
+                var marketList = db.MarketList.Where(w => w.DeletedDate == null && w.UserId == activeUser.Id && w.Users.DeletedDate == null).ToList();
+                if (marketList == null)
+                {
+                    MessageBox.Show("Zəhmət olmasa market seçin!!");
+                    return;
+                }
 
                 marketId = selectedMarket.value;
                 monthId = selectedMonth.value;
                 calculatePriceAndCount(marketId, monthId);
                 dgvRefleshDay(marketId, monthId);
                 grbEdit.Visible = false;
+                lblTotalAmount.Text = "0 AZN";
             }
             catch (Exception ex)
             {
@@ -111,7 +123,7 @@ namespace breadCompany
             var currentYear = DateTime.Now.Year;
             try
             {
-                dgvMarketList.DataSource = db.CountForDays.Where(w => w.DeletedDate == null && w.Subsidiary.MarketId == Id && w.MonthId == monthId && w.Year == currentYear).Select(s => new
+                var list =  db.CountForDays.Where(w => w.DeletedDate == null && w.Subsidiary.MarketId == Id && w.MonthId == monthId && w.Year == currentYear).Select(s => new
                 {
                     s.Id,
                     s.MarketName,
@@ -150,9 +162,13 @@ namespace breadCompany
                     s.PriceOfOne,
                     s.TotalCount,
                     s.TotalPrice,
-                    s.SumInOneMonth,
 
                 }).ToList();
+                if (list.Count==0)
+                {
+                    MessageBox.Show("Bu ay mövcud deyil!!");
+                }
+                dgvMarketList.DataSource = list;
                 int daysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, monthId);
 
                 if (daysInMonth == 28)
@@ -223,14 +239,19 @@ namespace breadCompany
         {
             try
             {
-                var marketList = db.MarketList.Where(w => w.DeletedDate == null && w.UserId == activeUser.Id && w.Users.DeletedDate == null).ToList();
-                if (marketList == null)
+                ComboItem selectedMarket = cmbMarketForCreateMonth.SelectedItem as ComboItem;
+                ComboItem selectedMonth = cmbMonthForCreateMonth.SelectedItem as ComboItem;
+                if (selectedMarket == null)
                 {
                     MessageBox.Show("Zəhmət olmasa Market əlavə edin!!");
                     return;
                 }
-                ComboItem selectedMarket = cmbMarketForCreateMonth.SelectedItem as ComboItem;
-                ComboItem selectedMonth = cmbMonthForCreateMonth.SelectedItem as ComboItem;
+                var marketList = db.MarketList.Where(w => w.DeletedDate == null && w.UserId == activeUser.Id && w.Users.DeletedDate == null).ToList();
+                if (marketList == null)
+                {
+                    MessageBox.Show("Zəhmət olmasa Market seçin!!");
+                    return;
+                }
                 double price = Convert.ToDouble(numPrice.Value);
 
                 if (price == 0)
@@ -243,7 +264,11 @@ namespace breadCompany
                 var currentYear = DateTime.Now.Year;
 
                 var subMarket = db.Subsidiary.Where(w => w.DeletedDate == null && w.MarketId == marketId).ToList();
-
+                if (subMarket.Count==0)
+                {
+                    MessageBox.Show("Filial mövcud deyil!!");
+                    return;
+                }
                 foreach (var item in subMarket)
                 {
                     var check = db.CountForDays.Where(w => w.DeletedDate == null && w.MarketName == item.Subsidiary1 && w.MonthId == monthId
@@ -294,8 +319,6 @@ namespace breadCompany
             try
             {
                 isActive = false;
-                LoginForm logPart = new LoginForm();
-                logPart.Show();
                 this.Close();
             }
             catch (Exception ex)
@@ -509,6 +532,24 @@ namespace breadCompany
         {
             LoginForm logForm = new LoginForm();
             logForm.Show();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (marketId==0)
+            {
+                MessageBox.Show("Zəhmət olmasa market seçin");
+                return;
+            }
+            if (monthId == 0)
+            {
+                MessageBox.Show("Zəhmət olmasa ay seçin");
+                return;
+            }
+            else {
+                printForm printForm = new printForm(activeUser, monthId, marketId);
+                printForm.Show();
+            }
         }
 
     }

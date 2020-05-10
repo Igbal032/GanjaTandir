@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateSubsudiary));
             this.grbCreateFilial = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -151,10 +152,10 @@
             this.ClientSize = new System.Drawing.Size(547, 412);
             this.Controls.Add(this.dgvSubsidary);
             this.Controls.Add(this.grbCreateFilial);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateSubsudiary";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filial Yarat";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateSubsudiary_FormClosing);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.grpUP = new System.Windows.Forms.GroupBox();
@@ -96,7 +97,7 @@
             this.txtUserPassword.Name = "txtUserPassword";
             this.txtUserPassword.Size = new System.Drawing.Size(129, 20);
             this.txtUserPassword.TabIndex = 4;
-            this.txtUserPassword.Text = "11";
+            this.txtUserPassword.Text = "12";
             // 
             // txtEmail
             // 
@@ -105,7 +106,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(129, 21);
             this.txtEmail.TabIndex = 3;
-            this.txtEmail.Text = "iqbal.hoff@list.ru";
+            this.txtEmail.Text = "sureyya";
             // 
             // btnLogin
             // 
@@ -153,14 +154,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(302, 265);
+            this.ClientSize = new System.Drawing.Size(302, 277);
             this.Controls.Add(this.linkRegister);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.grpUP);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Daxil ol";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);

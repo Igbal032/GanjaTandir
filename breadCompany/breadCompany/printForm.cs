@@ -1,15 +1,17 @@
 ﻿using breadCompany.Models;
+using iTextSharp.text.pdf.codec;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using ClosedXML.Excel;
 
 namespace breadCompany
 {
@@ -136,52 +138,75 @@ namespace breadCompany
                 File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
             }
         }
-        Bitmap bitmap;
-        private void BtnPrintSubmit_Click(object sender, EventArgs e)
+        Bitmap bmp;
+
+        private void btnPrintSubmit_Click(object sender, EventArgs e)
         {
             try
             {
-                SaveFileDialog save = new SaveFileDialog();
-                Bitmap bitmap = new Bitmap(this.Width, this.Height);
-                DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
-                if (save.ShowDialog() == DialogResult.OK)
+                decimal Recievable = 0;
+                decimal Discount = 0;
+                decimal Arrears = 0;
+                decimal NetBal = 0;
+                decimal Paid = 0;
+                decimal RemBal = 0;
+                DataTable dt = new DataTable();
+                foreach (DataGridViewColumn column in dgvDayForPrint.Columns)
                 {
-                    bitmap.Save(save.FileName + ".png", ImageFormat.Png);
-                    this.Close();
+                    dt.Columns.Add(column.HeaderText); //, column.ValueType
                 }
+                foreach (DataGridViewRow row in dgvDayForPrint.Rows)
+                {
+                    if (dgvDayForPrint.Rows.Count> row.Index)
+                    {
+                        dt.Rows.Add();
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            if (cell.Value == null)
+                            {
+                                dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = 0.ToString();
+                            }
+                            else {
+                                dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = cell.Value.ToString();
+                            }
+                        }
+                    }
+                    Console.WriteLine("success");
+                }
+                Stream myStream;
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "Excel File(.xlsx)|*.xlsx";
+                saveFileDialog1.FilterIndex = 2;
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    if ((myStream = saveFileDialog1.OpenFile()) != null)
+                    {
+                        using (XLWorkbook wb = new XLWorkbook())
+                        {
+                            string count = "";
+                            wb.Worksheets.Add(dt, "DefaultSchedule");
+                            for (int i = 1; i < dt.Rows.Count; i++)
+                            {
+                                Recievable += Convert.ToDecimal(dgvDayForPrint.Rows[i].Cells[2].Value);
+                            }
+                            string cell = "L" + (dt.Rows.Count + 2) + ":L" + (dt.Rows.Count + 2);
+                            wb.Worksheet(1).Cells(cell).Value = Recievable;
+                            wb.Worksheet(1).Columns().AdjustToContents();
+                            wb.SaveAs(saveFileDialog1.FileName+".xlsx");
+                        }
+                        // Code to write the stream goes here.
+                        myStream.Close();
+                    }
+                }
+                MessageBox.Show("Yadda saxlanıldı", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
             catch (Exception ex)
             {
-
-                MessageBox.Show("Please, check again after some minutes!! ");
-                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
+                MessageBox.Show("Select All Checkbox to Export MS Excel.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            ////////Graphics grp = this.CreateGraphics();
-            ////////bitmap = new Bitmap(this.Width, this.Height);
-            ////////Graphics mg = Graphics.FromImage(bitmap);
-            ////////mg.CopyFromScreen(this.Location.X, this.Location.Y,102, 50, this.Size);
-            ////////printPreviewDialog1.ShowDialog();
-            ////int height = dgvDayForPrint.Height;
-            ////dgvDayForPrint.Height = dgvDayForPrint.RowCount * dgvDayForPrint.RowTemplate.Height * 2;
-            ////bitmap = new Bitmap(dgvDayForPrint.Width, dgvDayForPrint.Height);
-            ////DrawToBitmap(bitmap, new Rectangle(0, 0, dgvDayForPrint.Width, dgvDayForPrint.Height));
-            ////dgvDayForPrint.Height = height;
-            ////printPreviewDialog1.ShowDialog();
 
-        }
-
-        private void PrintDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            try
-            {
-                e.Graphics.DrawImage(bitmap, 0, 0);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Please, check again after some minutes!! ");
-                File.AppendAllText(pathTxt, "\n" + ex + ":" + DateTime.Now);
-            }
         }
     }
 }

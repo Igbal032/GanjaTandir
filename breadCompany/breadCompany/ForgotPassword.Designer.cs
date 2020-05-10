@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPassword));
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblForgetpassword = new System.Windows.Forms.Label();
             this.btnSendPassword = new System.Windows.Forms.Button();
@@ -70,10 +71,10 @@
             this.Controls.Add(this.btnSendPassword);
             this.Controls.Add(this.lblForgetpassword);
             this.Controls.Add(this.txtEmail);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ForgotPassword";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Şifrəni Unutdum";
             this.ResumeLayout(false);

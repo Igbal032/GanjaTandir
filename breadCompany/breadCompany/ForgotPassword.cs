@@ -49,10 +49,7 @@ namespace breadCompany
                     }
                     else
                     {
-                        //Extention.MailExtention.SendMail("Şifrə Yeniləmə", "Şifrə: "+checkEmail.UserPassword/*TODO*/, checkEmail.UserEmail);
-                        //this.Close();
-                        LoginForm logPart = new LoginForm();
-                        logPart.Show();
+                        this.Close();
                         MessageBox.Show("Sizin şifrə :" + checkEmail.UserPassword);
 
                     }

@@ -64,13 +64,13 @@ namespace breadCompany
                     MessageBox.Show("Zəhmıət olmasa Filialin adını daxil edin!!");
                     return;
                 }
-                var subsidiary = db.Subsidiary.Any(w => w.Subsidiary1 == txtFlialNAme.Text && w.DeletedDate == null);
+                ComboItem selectedMarket = cmbMarket.SelectedItem as ComboItem;
+                var subsidiary = db.Subsidiary.Any(w => w.Subsidiary1 == txtFlialNAme.Text && w.DeletedDate == null && w.MarketId == selectedMarket.value);
                 if (subsidiary)
                 {
                     MessageBox.Show("Bu adda Filial var");
                     return;
                 }
-                ComboItem selectedMarket = cmbMarket.SelectedItem as ComboItem;
                 Subsidiary newFilial = new Subsidiary();
                 newFilial.MarketId = selectedMarket.value;
                 newFilial.Subsidiary1 = txtFlialNAme.Text.ToUpper();

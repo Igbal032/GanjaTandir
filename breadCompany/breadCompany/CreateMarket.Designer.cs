@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateMarket));
             this.txtMarketName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             // txtMarketName
             // 
             this.txtMarketName.Location = new System.Drawing.Point(123, 18);
+            this.txtMarketName.MaxLength = 25;
             this.txtMarketName.Name = "txtMarketName";
             this.txtMarketName.Size = new System.Drawing.Size(127, 20);
             this.txtMarketName.TabIndex = 0;
@@ -73,7 +75,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(256, 24);
+            this.btnEdit.Location = new System.Drawing.Point(256, 16);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 5;
@@ -105,7 +107,7 @@
             // 
             this.dgvMarketListInCreate.AllowUserToDeleteRows = false;
             this.dgvMarketListInCreate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMarketListInCreate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarketListInCreate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMarketListInCreate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.MarketName});
@@ -113,7 +115,7 @@
             this.dgvMarketListInCreate.Location = new System.Drawing.Point(0, 109);
             this.dgvMarketListInCreate.Name = "dgvMarketListInCreate";
             this.dgvMarketListInCreate.ReadOnly = true;
-            this.dgvMarketListInCreate.Size = new System.Drawing.Size(570, 238);
+            this.dgvMarketListInCreate.Size = new System.Drawing.Size(484, 238);
             this.dgvMarketListInCreate.TabIndex = 3;
             this.dgvMarketListInCreate.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMarketListInCreate_RowHeaderMouseClick);
             // 
@@ -135,13 +137,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 347);
+            this.ClientSize = new System.Drawing.Size(484, 347);
             this.Controls.Add(this.dgvMarketListInCreate);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateMarket";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Market Yarat";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateMarket_FormClosing);
